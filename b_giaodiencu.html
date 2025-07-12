@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VIAM Lab Research</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .center-img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    header {
+      background: #062b48;
+      color: white;
+      padding: 1em;
+      text-align: center;
+    }
+    nav {
+      background: #031d33;
+      padding: 0.5em;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .container {
+      display: flex;
+    }
+    .sidebar {
+      width: 30%;
+      background: #f1f1f1;
+      padding: 1em;
+    }
+    .sidebar h3 {
+      background: #004c80;
+      color: white;
+      padding: 0.5em;
+    }
+    .sidebar button {
+      width: 100%;
+      padding: 0.5em;
+      margin: 0.2em 0;
+      cursor: pointer;
+    }
+    .content {
+      flex: 1;
+      padding: 20px 20px; /* TRÊN-DƯỚI 30px, TRÁI-PHẢI 50px */
+      max-width: 800px;   /* Giới hạn chiều ngang để không bị tràn */
+      text-align: justify; /* Căn đều 2 bên cho đẹp */
+      font-size: 14px;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+    .section-title {
+        font-weight: bold;
+    }
+    
+/* .footer {
+  background-color: #0b2341;
+  color: white;
+  padding: 30px 20px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.contact-info,
+.language {
+  width: 65%;
+  min-width: 250px;
+}
+
+.language p {
+  margin: 5px 0;
+}
+
+.footer a {
+  color: #707070;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: rgb(118, 118, 118);
+}
+
+.copyright {
+  background-color: black;
+  text-align: center;
+  font-size: 12px;
+  margin: 20px;
+  border: 1px solid #444;
+  padding: 30px 30px;
+  color: #ffffff;
+} */
+
+.footer {
+  background-color: #0b2341;
+  color: white;
+  padding: 30px 20px 0;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-bottom: 20px; /* khoảng cách với phần copyright */
+}
+
+.copyright {
+  background-color: #000000;
+  color: #ccc;
+  text-align: center;
+  font-size: 12px;
+  padding: 10px 0;
+  width: 100%;
+}
+
+  </style>
+
+</head>
+<body>
+  <div class="container">
+    <div class="sidebar">
+       <h3>A. ROBOTICS</h3>
+
+       <!-- Nho them id -->
+    <button id="m1" class="menu-button">UNMANNED SURFACE VEHICLE (USV)</button>
+    <button id="m2" class="menu-button">REMOTELY OPERATED UNDERWATER VEHICLE (ROV)</button>
+    <button id="m3" class="menu-button">AUTONOMOUS UNDERWATER VEHICLE (AUV)</button>
+    <button id="m4" class="menu-button">NAVIGATION</button>
+    <button id="m5" class="menu-button">MANIPULATOR APPLICATION</button>
+
+        <h3>B. AUTOMATION AND SMART MANUFACTURING</h3>
+    <div class="section-title">Automation Training Kits</div>
+    <button id="m6" class="menu-button">FLEXIBLE MANUFACTURING SYSTEM</button>
+    <button id="m7" class="menu-button">OBJECT CLASSIFICATION SYSTEM</button>
+    <button id="m8" class="menu-button">PAINT MIXING TANK</button>
+    <button id="m9" class="menu-button">HEATING TANK</button>
+    <button id="m10" class="menu-button">FILLING SYSTEM</button>
+    <button id="m11" class="menu-button">CLASSIFICATION AND STORING SYSTEM</button>
+    <button id="m12" class="menu-button">AUGMENTED REALITY</button>
+
+    <div class="section-title">Internet of Things</div>
+    <button id="m13" class="menu-button">IOT PLATFORM</button>
+
+    <div class="section-title">Smart Factory</div>
+    <button id="m14" class="menu-button">MANUFACTURING EXECUTION SYSTEM</button>
+    <button id="m15" class="menu-button">WAREHOUSE MANAGEMENT SYSTEM</button>
+    <button id="m16" class="menu-button">MAINTENANCE EXECUTION SYSTEM</button>
+    <button id="m17" class="menu-button">MACHINE MONITORING SYSTEM</button>
+    <!-- den day la dung -->
+        <h3>C. SMART HOME</h3>
+    </div>
+    
+    <div class="content" id="mainContent">
+
+          <h2>UNMANNED SURFACE VEHICLE</h2>
+            <h4>Introduction:</h4>  
+              <p>
+               Unmanned Surface Vehicle - USV is known as a modern vehicle which assists people indiscovering water environment. It can either be remotely controlled or operate automatically to fulfill different tasks.
+              </p>
+              <!-- <img src="unmanned.png" class="center-img" alt="" width="280px" height="280px"> -->
+                <div style="text-align: center;">
+                  <img src="unmanned.png" alt="" width="280px" height="280px">
+                  <p>UNMANNED SURFACE VEHICLE (USV)</p>
+                </div>
+            <h4>Application:</h4>
+             <ul>
+              <li>Researching and monitoring the environment.</li>
+              <li>Water sampling</li>
+              <li>Map drawing</li>
+              <li>Patrol and scout</li>
+              <li>Transferring information or carrying device.</li>
+              <li>Can be weaponized and used for various purposes in the military.</li>
+              <li> In addition, USV can be combined with AUV, ROV and UAV to form an automatic system for multiple purposes both in the air and water.</li>
+             </ul>
+             <a href="http://viamlab.com/usv/">Current version of research :>></a>
+
+        
+          <h2>NAVIGATION</h2>
+            <h4>Introduction:</h4>
+              <p>AHRS (Attitude and Heading Reference System) is an estimate of the angles of roll, pitch, yaw of self-propelled robots with high accuracy and updating speed. Using AHRS and accelerometer sensors, Inertial Navigation System (INS) is able to locate the robot with high accuracy at the beginning but the INS drift is greater with time.Combining Global Positioning System (GPS) with INS system increases the quality in many aspects such as accuracy, speed update, ...</p>
+                <div style="text-align: center;">
+                  <img src="Navigations.png" alt="" width="280px" height="280px">
+                  <p>Navigation algorithms</p>
+                </div>
+                <div style="text-align: center;">
+                  <img src="Viam_Navi.png" alt="" width="280px" height="280px">
+                  <p>VIAM-NAVI, finished product</p>
+                </div>
+            <h4>Application:</h4>
+             <ul>
+              <li>Positioning on the ground, surface, under water.</li>
+              <li>Lead the way for self-propelled vehicles</li>
+              <li>Provides input data needed for advanced control applications such as positioning, balance,…</li>
+             </ul>
+             <a href="http://viamlab.com/en/tieng-viet-ahrs-gps-ins/">Current research :>></a>
+        
+          <h2>REMOTELY OPERATED UNDERWATER VEHICLE (ROV)</h2>
+            <h4>Introduction:</h4>
+              <p>ROV is an underwater vehicle remotely controlled by cables and thrusters, varied in shape and size. ROV is regarded as a modern tool that enables people to explore the underwater world, perform many tasks at depths that humans can not reach. It can work under water for long periods, in harsh environment. Often there is a video camera, carrying sensors and hand-held machines, serving a variety of tasks for military and civil purposes.</p>
+            <h4>Application:</h4>
+             <ul>
+              <li>Set up / remove mines, torpedoes</li>
+              <li>Collaborate with human in the battle</li>
+              <li>Patrol, security and rescue</li>
+              <li>Oil and gas field exploration, mineral</li>
+              <li>Close and open the valves, pipeline repair installation, rig maintenance</li>
+              <li>Digging, installing, checking underwater cable condition</li>
+              <li>Collecting information, geography, marine biology</li>
+              <li>Underwater archeology, exploration of shipwreck</li>
+             </ul>
+             <a href="http://viamlab.com/en/tieng-viet-rov/">Current research :>></a>
+
+          <h2>AUTONOMOUS UNDERWATER VEHICLE (AUV)</h2>
+            <h4>Introduction:</h4>
+              <p>The AUV can be considered as an improved version of the ROV, which is a highly autonomous unmanned vehicle for underwater applications.Mostly of the torpedo type with propulsion and steering, self-controlled.Can work under water for long periods of time, depending on the source of energy.AUV is equipped with sensor devices, serving a variety of tasks for military and civil purposes.</p>
+            <h4>Application:</h4>
+             <ul>
+              <li>Mapping the seabed</li>
+              <li>Survey and monitoring by region</li>
+              <li>Surface geological exploration, gathering information about the mines and minerals</li>
+              <li>Detect, destroy the target underwater, demining</li>
+              <li>Information gathering, monitoring and reconnaissance</li>
+              <li>Submarine warfare, survey and identification</li>
+              <li>Transmission of information and locate underwater</li>
+              <li>Attack and defense support</li>
+              <li>Special tasks (torpedoes, lay mines...)</li>
+             </ul>
+             <a href="http://viamlab.com/en/tieng-viet-auv/">Current research :>></a>
+
+          <h2>MANIPULATOR APPLICATION</h2>
+            <h4>Introduction:</h4>
+              <p>The need for robots is increasing in complex manufacturing processes that contribute to increased productivity, reduced costs, improved quality and accuracy, and reduced risk when people work at dangerous environment.The design of robotic systems operating without human intervention is becoming more and more popular, especially in the era of rapid development of computer vision today.</p>
+              <div style="text-align: center;">
+                  <img src="manipulator.png" alt="" width="280px" height="280px">
+              </div>
+            <h4>Application:</h4>
+             <ul>
+              <li>Folding & sort objects on the dynamic conveyor</li>
+              <li>Welding of complex objects</li>
+              <li>Spray paint for the product</li>
+              <li>Replace workers in hazardous environments and continuous operation</li>
+             </ul>
+             <a href="http://viamlab.com/en/tieng-viet-manipulator-application/">Current research :>></a>
+
+          <h2>Flexible Manufacturing System</h2>
+             <div style="text-align: center;">
+                  <img src="rotary_table.png" alt="" width="280px" height="280px">
+                  <p>Figure 1: Flexible Manufacturing System</p>
+             </div>
+             <div style="text-align: center;">
+                  <img src="flexible.png" alt="" width="280px" height="280px">
+                  <p>Figure 2:Flexible Manufacturing System</p>
+              </div>
+          <a href="https://viamlab.com/wp-content/uploads/2018/09/image057.png"></a>
+            <p>Watch video:</p>
+            <a href="https://youtu.be/N7UgWDEVyPg?list=PLc7Bg7xoyBQZtjwLcNWIPMctzxekQ5hgk">link youtube</a>
+
+          <h2>Object Classification System</h2>
+             <ul>
+              <li>Combining equipment in industrial automation such as cylinder, solenoid valve, conveyor, rotary handle, picking handle ... into the product classification model. Especially the picking mechanism is made of two axes X, Y is the visme attached to the stepper motor and the Z axis is the travel cylinder and the pick up cylinder.</li>
+              <li>Using module motion controller of PLC S7-1200 to control position for two X and Y axis motors and one rotary platform.</li>
+              <li>Use Matlab to capture and identify the chess pieces, then process and transmit PLC position parameters in x, y coordinates so that the station can position the chess piece to the desired position automatically.</li>
+              <li>Monitor, read status and manual mode to control effects on remote devices via Webserver written on HTML, CSS, Jquery and Javascript.</li>
+             </ul>
+            <div style="text-align: center;">
+              <img src="classification.png" alt="" width="280px" height="280px">
+                <p>Figure 1: Object Classification System</p>
+            </div>
+            <div style="text-align: center;">
+              <img src="PLC.png" alt="" width="280px" height="280px">
+                <p>Figure 2:Function control system</p>
+            </div>
+            <p></p>
+            <p>Watch video:</p>
+            <a href="https://youtu.be/umtAHnbDquI?list=PLc7Bg7xoyBQbxYXAjaYNn7DhAbAm_XJO3">link youtube</a>
+
+          <h2>Heating Tank</h2>
+             <p>Temperature control and level control are widely concerned nowadays, especially in industry and agriculture. In the factories that specialize in producing chemical and beverage, the requirements concerning liquid’s temperature and volume (or level) are very strict. Therefore, researching a appropriate solution for this problem would be a tremendous help to quality management as well as production optimization.</p>
+             <p>Our model consists of a controlling tank and a storage tank. After being pumped into the controlling tank, the liquid is periodically heated using heater resistor. A pump is controlled by PLC and inverter to pump the required amount of liquid into the storage tank. The model also uses a PID controller to control the tank temperature. Additionally, the model is equipped with HMI interface, SCADA interface, LAN based web server, IOT-intergrated database to supervise the system</p>
+            <div style="text-align: center;">
+              <img src="heating_tank.png" alt="" width="280px" height="280px">
+            </div>
+            <p>Under development:</p>
+             <ul>
+              <li>Combine with other systems to form a large-scale production line</li>
+              <li>Integrate a chiller into the output pump,...</li>
+              <li>Widen the controller’s temperature range to adapt to different kinds of industrial systems</li>
+             </ul>
+            <p>Watch video:</p>
+            <a href="https://www.youtube.com/watch?v=DsuISeBP0y">link youtube</a>
+
+          <h2>FILLING SYSTEM</h2>
+             <p>Our filling model is built based on the design of the filling systems used in beverage, chemical factories,...</p>
+             <p>Operation: A bottle is brought into the system and carried along the conveyor -> the sensors detect the bottle and stop the conveyor -> the system fills the bottle with water from the storage tank -> the amount of water is measured by a flow sensor -> when the bottle is full, the system stop pumping out water, the conveyor moves again and a new filling process begin</p>
+             <div style="text-align: center;">
+              <img src="filling_system.png" alt="" width="280px" height="280px">
+            </div>
+             <h4>Feature:</h4>
+              <ul>
+                <li>Direct control using HMI screen</li>
+                <li>Remote supervisory control through the use of SCADA and WebServer</li>
+                <li>Storage tank’s temperature can be controlled using PID controller</li>
+                <li>IFM sensors with I/O Link communication</li>
+                <li>Precisely controlled conveyor using RS-Servo</li>
+                <li>Product classification system using camera</li>
+              </ul>
+             <p>Watch video at:</p>
+             <a href="https://youtu.be/U8B5QlTnp_k">link youtube</a>
+
+          <h2>CLASSIFICATION AND STORING SYSTEM</h2>
+              <p>The classification of products according to the characteristics of the products is very popular in the industry such as classification of substandard products, according to color, height, ... so that products with similar characteristics can be arranged. In this model, the material and height characteristics are used to classify products.</p>
+              <p>Operating procedure: The product is put on the conveyor belt -> the height sensor will measure the height -> the metal sensor will recognize whether the material is metal -> If it is metal and set the height, the cylinder will push then the product will pick up the product tray into the hands on the second floor warehouse (store has 2 floors: 1st floor: nonmetals, 2nd floor: metal) -> If the product is metal but not the correct height, the product will go out of the conveyor ->  non-metallic sensor -> If the product is non-metal and the correct height, the cylinder pushes the product to the tray and then the picker takes the product away</p>
+              <div style="text-align: center;">
+              <img src="classification.png" alt="" width="280px" height="280px">
+            </div>
+              <h4>Feature:</h4>
+               <ul>
+                <li>Control via HMI screen</li>
+                <li>IFM sensors wth IO-Link communication</li>
+                <li>Stable Gripper</li>
+                <li>Conveyor control with inverter</li>
+               </ul>
+              <p>Watch video at:</p>
+              <a href="https://youtu.be/1EtWtBvE8u0">link youtube</a>
+
+              <h4>Augmented reality (AR):</h4>
+              <p>Augmented reality (AR) is the integration of information from a computer into a real-world environment, in which the insertion of images into the user's vision is dominant. AR technology improves the worker's ability to increase productivity, it provides a safe environment and enhances job satisfaction of workers.</p>
+              <h4>Application of AR:</h4>
+               <ul>
+                <li>Installation</li>
+                <li>Maintenance and repair.</li>
+                <li>Technician training.</li>
+                <li>Quality control.</li>
+               </ul>
+              <p>Augmented reality demo with inverter</p>
+              <a href="https://youtu.be/7tUaPp6CQZM">link youtube</a>
+
+              <div style="text-align: center;">
+                <img src="iiot_platform.png" alt="" width="280px" height="280px">
+                  <h4>IOT PLATFORM</h4>
+              </div>
+
+              <div style="text-align: center;">
+                <img src="manufacturing.png" alt="" width="280px" height="280px">
+                  <h4>MANUFACTURING EXCECUTION SYSTEM</h4>
+              </div>
+
+              <div style="text-align: center;">
+                <img src="warehouse.png" alt="" width="280px" height="280px">
+                  <h4>WAREHOUSE MANAGEMENT SYSTEM</h4>
+              </div>
+
+              <div style="text-align: center;">
+                <img src="computerized.png" alt="" width="280px" height="280px">
+                  <h4>COMPUTERIZED MAINTENANCE MANAGEMENT SYSTEM</h4>
+              </div>
+
+              <div style="text-align: center;">
+                <img src="machine.png" alt="" width="280px" height="280px">
+                  <h4>MACHINE MONITORING SYSTEM</h4>
+              </div>
+              
+    </div>
+  </div>
+
+  <footer class="footer">
+        <div class="footer-content">
+          <div class="contact-info">
+            <p><strong>Email:</strong><br>
+             viamlab@gmail.com<br>
+             tnhuy@hcmut.edu.vn<br>
+             Mobile: (+84)989052413<br>
+              Địa chỉ: Trường Đại học Bách Khoa TP.HCM, 268 Lý Thường Kiệt, quận 10, TP.HCM
+            </p>
+         </div>
+           <div class="language">
+             <p><strong>LANGUAGE:</strong></p>
+             <p><img src="https://flagcdn.com/w40/gb.png" alt="English flag" width="20px" height="20px"> English</p>
+             <p><img src="https://flagcdn.com/w40/vn.png" alt="Vietnamese flag" width="20px" height="20px"> Tiếng Việt</p>   
+           </div>
+         </div>
+        <div class="copyright">
+          © 2018 unitylabs. trademarks and brands are the property of their respective owners.
+        </div>
+    </footer>
+
+  <script>
+    const contents = [
+      `<h2>UNMANNED SURFACE VEHICLE</h2><p><strong>Introduction:</strong> Unmanned Surface Vehicle - USV is a modern vehicle ...</p><img src="usv.jpg">`,
+      `<h2>REMOTELY OPERATED UNDERWATER VEHICLE (ROV)</h2><p><strong>Introduction:</strong> ROV is an underwater vehicle ...</p><img src="rov.jpg">`,
+      `<h2>AUTONOMOUS UNDERWATER VEHICLE (AUV)</h2><p><strong>Introduction:</strong> The AUV is an improved version of ROV ...</p><img src="auv.jpg">`,
+      `<h2>NAVIGATION</h2><p><strong>Introduction:</strong> AHRS and INS allow accurate navigation ...</p><img src="navigation.jpg">`,
+      `<h2>MANIPULATOR APPLICATION</h2><p><strong>Introduction:</strong> Robots help increase productivity in hazardous environments ...</p><img src="manipulator.jpg">`
+    ];
+
+    function showContent(index) {
+      document.getElementById("mainContent").innerHTML = contents[index];
+    }
+  </script>
+</body>
+</html>
