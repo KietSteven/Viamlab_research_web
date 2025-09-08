@@ -6,7 +6,7 @@
   <title>VIAM Lab Research</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: Arial;
       margin: 0;
       padding: 0;
     }
@@ -21,14 +21,16 @@
       display: flex;
     }
     .sidebar {
-      width: 30%;
+      width: 20%;
       background: #f1f1f1;
       padding: 1em;
+      margin-left: 10%; /* Thêm khoảng cách bên trái */
     }
     .sidebar h3 {
       background: #004c80;
       color: white;
       padding: 0.5em;
+      font-weight: bold;
     }
     .sidebar button {
       width: 100%;
@@ -48,45 +50,16 @@
       height: auto;
     }
     .section-title {
-        font-weight: bold;
+      font-weight: bold;
     }
-    
-/*
-    .footer {
-      width: 1920px;
-      background-color: #0b2341;
-      color: white;
-      padding: 30px 20px 0;
-      font-family: Arial, sans-serif;
-      font-size: 14px;
+    .menu-button {
+      font-size: 14px
     }
-
-    .footer-content {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      padding-bottom: 20px; // khoảng cách với phần copyright
+    h4 {
+      font-size: 15px;
+      font-family: Arial;
+      font-weight: bold;
     }
-
-    .copyright {
-      background-color: #000000;
-      color: #ccc;
-      text-align: center;
-      font-size: 12px;
-      padding: 10px 0;
-      width: 100%;
-    }
-
-    .body {
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-    .footer {
-      margin-top: auto;
-    }
-*/
-
 /*
  *    Tương thích mọi loại màn hình
  */
@@ -310,7 +283,7 @@
 
       <div id="con1">
           <h2>UNMANNED SURFACE VEHICLE</h2>
-            <h4>Introduction:</h4>  
+            <h4>Introduction:</h4>
               <p>
                Unmanned Surface Vehicle - USV is known as a modern vehicle which assists people indiscovering water environment. It can either be remotely controlled or operate automatically to fulfill different tasks.
               </p>
@@ -329,7 +302,7 @@
               <li>Can be weaponized and used for various purposes in the military.</li>
               <li> In addition, USV can be combined with AUV, ROV and UAV to form an automatic system for multiple purposes both in the air and water.</li>
              </ul>
-             <a style="display: flex;"   href="http://viamlab.com/usv/">Current research :>></a>
+             <a style="color: blue; text-decoration: underline;" href="http://viamlab.com/usv/">Current research</a>
       </div>
 
 <!-- Nội dung tạm ẩn tương ứng với m2 → m17 -->
@@ -348,7 +321,7 @@
               <li>Collecting information, geography, marine biology</li>
               <li>Underwater archeology, exploration of shipwreck</li>
              </ul>
-             <a href="http://viamlab.com/en/tieng-viet-rov/">Current research :>></a>
+             <a style="color: blue; text-decoration: underline;" href="http://viamlab.com/en/tieng-viet-rov/">Current research</a>
       </div>
 
       <div id="con3" style="display: none;">
@@ -367,7 +340,7 @@
               <li>Attack and defense support</li>
               <li>Special tasks (torpedoes, lay mines...)</li>
              </ul>
-             <a href="http://viamlab.com/en/tieng-viet-auv/">Current research :>></a>
+             <a style="color: blue; text-decoration: underline;" href="http://viamlab.com/en/tieng-viet-auv/">Current research</a>
       </div>
 
       <div id="con4" style="display: none;">
@@ -388,7 +361,7 @@
               <li>Lead the way for self-propelled vehicles</li>
               <li>Provides input data needed for advanced control applications such as positioning, balance,…</li>
              </ul>
-             <a href="http://viamlab.com/en/tieng-viet-ahrs-gps-ins/">Current research :>></a>
+             <a style="color: blue; text-decoration: underline;" href="http://viamlab.com/en/tieng-viet-ahrs-gps-ins/">Current research</a>
       </div>
 
       <div id="con5" style="display: none;">
@@ -405,7 +378,7 @@
               <li>Spray paint for the product</li>
               <li>Replace workers in hazardous environments and continuous operation</li>
              </ul>
-             <a href="http://viamlab.com/en/tieng-viet-manipulator-application/">Current research :>></a>
+             <a style="color: blue; text-decoration: underline;" href="http://viamlab.com/en/tieng-viet-manipulator-application/">Current research</a>
       </div>
 
       <div id="con6" style="display: none;">
@@ -419,7 +392,7 @@
                   <p>Figure 2:Flexible Manufacturing System</p>
              </div>
             <p>Watch video:</p>
-            <a href="https://youtu.be/N7UgWDEVyPg?list=PLc7Bg7xoyBQZtjwLcNWIPMctzxekQ5hgk">link youtube</a>
+            <iframe width="768" height="432" src="https://youtube.com/embed/N7UgWDEVyPg?list=PLc7Bg7xoyBQZtjwLcNWIPMctzxekQ5hgk" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
       </div>
 
       <div id="con7" style="display: none;">
@@ -440,19 +413,21 @@
             </div>
             <p></p>
             <p>Watch video:</p>
-            <a href="https://youtu.be/umtAHnbDquI?list=PLc7Bg7xoyBQbxYXAjaYNn7DhAbAm_XJO3">link youtube</a>
+            <iframe width="768" height="432" src="https://youtube.com/embed/umtAHnbDquI?list=PLc7Bg7xoyBQbxYXAjaYNn7DhAbAm_XJO3" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
       </div>
 
       <div id="con8" style="display: none;">
           <h2>MIXING TANK SYSTEM</h2>
           <p>Our mixing tank system demonstrates a simple mixing process: fetching constitutive colourants (red, blue, yellow) -> computing the amount of each colourants -> mixing and blending to produce a new batch of colourant -> canning finished product.</p>
-          <img src="mixing_tank_system.png" alt="" width="280px" height="280px">
+           <div style="text-align: center;">
+              <img src="https://kietsteven.github.io/Viamlab_research_web/mixing_tank_system.png" alt="" width="280px" height="280px">
+           </div>
           <h4>Feature:</h4>
           <ul>
             <li>Direct control using HMI</li>
             <li>Remote supervisory control through the use of SCADA and WebServer</li>
             <p>Watch video:</p>
-            <a href="https://www.youtube.com/watch?v=e_amv3fT85M">link youtube</a>
+            <iframe width="768" height="432" src="https://www.youtube.com/embed/e_amv3fT85M" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
           </ul>
       </div>
 
@@ -470,7 +445,7 @@
               <li>Widen the controller’s temperature range to adapt to different kinds of industrial systems</li>
              </ul>
             <p>Watch video:</p>
-            <a href="https://www.youtube.com/watch?v=DsuISeBP0y">link youtube</a>
+            <iframe width="768" height="432" src="https://www.youtube.com/embed/DsuISeBP0y" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
       </div>
 
       <div id="con10" style="display: none;">
@@ -490,7 +465,7 @@
                 <li>Product classification system using camera</li>
               </ul>
              <p>Watch video at:</p>
-             <a href="https://youtu.be/U8B5QlTnp_k">link youtube</a>
+             <iframe width="768" height="432" src="https://youtube.com/embed/U8B5QlTnp_k" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
       </div>
 
       <div id="con11" style="display: none;">
@@ -508,7 +483,7 @@
                 <li>Conveyor control with inverter</li>
                </ul>
               <p>Watch video at:</p>
-              <a href="https://youtu.be/1EtWtBvE8u0">link youtube</a>
+              <iframe width="768" height="432" src="https://www.youtube.com/embed/1EtWtBvE8u0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
       </div>
 
       <div id="con12" style="display: none;">
@@ -522,7 +497,7 @@
                 <li>Quality control.</li>
                </ul>
               <p>Augmented reality demo with inverter</p>
-              <a href="https://youtu.be/7tUaPp6CQZM">link youtube</a>
+              <iframe width="768" height="432" src="https://www.youtube.com/embed/7tUaPp6CQZM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
       </div>
 
       <div id="con13" style="display: none;">
@@ -574,11 +549,11 @@
             <p>Digital water curtainis an image display system with water by controlling the opening and closing valves in a given scenario. In recent years, these systems have appeared more and more, bringing about economic benefits and are widely applied in the field of decoration, advertising for events, commercial center and product showroom...With the new addition, the ability to combine music and light will evoke more emotions for users than the conventional lighting system.</p>
             <p>The demand for equipment is huge, but the cost of investing in digital water curtain is quite high due to the need to import from abroad and the maintenance and replacement is also difficult.Therefore, the localization trend of digital water curtainin the market is an urgent need to increase competitiveness compared to imported products.</p>
               <div style="text-align: center;">
-                  <img src="digital_water_curtain.png" alt="" width="150px" height="150px">
+                  <img src="https://kietsteven.github.io/Viamlab_research_web/digital_water_curtain.png" alt="" width="150px" height="150px">
                   <p>Figure 1: Digital water curtain</p>
               </div>
               <div style="text-align: center;">
-                  <img src="control_system.png" alt="" width="480px" height="480px">
+                  <img src="https://kietsteven.github.io/Viamlab_research_web/control_system.png" alt="" width="480px" height="480px">
                   <p>Figure 2: Control system</p>
               </div>
             <p><strong>GUI on PC:</strong> The image import program needs to be displayed on the water screen</p>
