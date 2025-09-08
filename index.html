@@ -17,6 +17,7 @@
     }
 
     .container {
+      width: 1920px;
       display: flex;
     }
     .sidebar {
@@ -49,44 +50,41 @@
     .section-title {
         font-weight: bold;
     }
+/*
+    .footer {
+      width: 1920px;
+      background-color: #0b2341;
+      color: white;
+      padding: 30px 20px 0;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+    }
 
-.footer {
-  background-color: #0b2341;
-  color: white;
-  padding: 30px 20px 0;
-  font-family: Arial, sans-serif;
-  font-size: 14px;
-}
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding-bottom: 20px; // khoảng cách với phần copyright
+    }
 
-.container {
-  max-width: 1000px;
-  margin: 0 auto;
-}
+    .copyright {
+      background-color: #000000;
+      color: #ccc;
+      text-align: center;
+      font-size: 12px;
+      padding: 10px 0;
+      width: 100%;
+    }
 
-.footer-content {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  padding-bottom: 20px; /* khoảng cách với phần copyright */
-}
-
-.copyright {
-  background-color: #000000;
-  color: #ccc;
-  text-align: center;
-  font-size: 12px;
-  padding: 10px 0;
-  width: 100%;
-}
-
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-footer {
-  margin-top: auto;
-}
+    .body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    .footer {
+      margin-top: auto;
+    }
+*/
 
   </style>
 
@@ -241,7 +239,7 @@ footer {
 
      <div class="content">
 
-      <div id="con1" style="display: none;">
+      <div id="con1">
           <h2>UNMANNED SURFACE VEHICLE</h2>
             <h4>Introduction:</h4>  
               <p>
@@ -249,7 +247,7 @@ footer {
               </p>
               <!-- <img src="unmanned.png" class="center-img" alt="" width="280px" height="280px"> -->
                 <div style="text-align: center;">
-                  <img src="unmanned.png" alt="" width="280px" height="280px">
+                  <img src="https://kietsteven.github.io/Viamlab_research_web/unmanned.png" alt="" width="280px" height="280px">
                   <p>UNMANNED SURFACE VEHICLE (USV)</p>
                 </div>
             <h4>Application:</h4>
@@ -308,11 +306,11 @@ footer {
             <h4>Introduction:</h4>
               <p>AHRS (Attitude and Heading Reference System) is an estimate of the angles of roll, pitch, yaw of self-propelled robots with high accuracy and updating speed. Using AHRS and accelerometer sensors, Inertial Navigation System (INS) is able to locate the robot with high accuracy at the beginning but the INS drift is greater with time.Combining Global Positioning System (GPS) with INS system increases the quality in many aspects such as accuracy, speed update, ...</p>
                 <div style="text-align: center;">
-                  <img src="Navigations.png" alt="" width="280px" height="280px">
+                  <img src="https://kietsteven.github.io/Viamlab_research_web/Navigations.png" alt="" width="280px" height="280px">
                   <p>Navigation algorithms</p>
                 </div>
                 <div style="text-align: center;">
-                  <img src="Viam_Navi.png" alt="" width="280px" height="280px">
+                  <img src="https://kietsteven.github.io/Viamlab_research_web/Viam_Navi.png" alt="" width="280px" height="280px">
                   <p>VIAM-NAVI, finished product</p>
                 </div>
             <h4>Application:</h4>
@@ -329,7 +327,7 @@ footer {
             <h4>Introduction:</h4>
               <p>The need for robots is increasing in complex manufacturing processes that contribute to increased productivity, reduced costs, improved quality and accuracy, and reduced risk when people work at dangerous environment.The design of robotic systems operating without human intervention is becoming more and more popular, especially in the era of rapid development of computer vision today.</p>
               <div style="text-align: center;">
-                  <img src="manipulator.png" alt="" width="280px" height="280px">
+                  <img src="https://kietsteven.github.io/Viamlab_research_web/manipulator.png" alt="" width="280px" height="280px">
               </div>
             <h4>Application:</h4>
              <ul>
@@ -344,14 +342,13 @@ footer {
       <div id="con6" style="display: none;">
           <h2>Flexible Manufacturing System</h2>
              <div style="text-align: center;">
-                  <img src="rotary_table.png" alt="" width="280px" height="280px">
+                  <img src="https://kietsteven.github.io/Viamlab_research_web/rotary_table.png" alt="" width="280px" height="280px">
                   <p>Figure 1: Flexible Manufacturing System</p>
              </div>
              <div style="text-align: center;">
-                  <img src="flexible.png" alt="" width="280px" height="280px">
+                  <img src="https://kietsteven.github.io/Viamlab_research_web/flexible.png" alt="" width="280px" height="280px">
                   <p>Figure 2:Flexible Manufacturing System</p>
-              </div>
-          <a href="https://viamlab.com/wp-content/uploads/2018/09/image057.png"></a>
+             </div>
             <p>Watch video:</p>
             <a href="https://youtu.be/N7UgWDEVyPg?list=PLc7Bg7xoyBQZtjwLcNWIPMctzxekQ5hgk">link youtube</a>
       </div>
@@ -365,11 +362,11 @@ footer {
               <li>Monitor, read status and manual mode to control effects on remote devices via Webserver written on HTML, CSS, Jquery and Javascript.</li>
              </ul>
             <div style="text-align: center;">
-              <img src="classification.png" alt="" width="280px" height="280px">
+              <img src="https://kietsteven.github.io/Viamlab_research_web/classification.png" alt="" width="280px" height="280px">
                 <p>Figure 1: Object Classification System</p>
             </div>
             <div style="text-align: center;">
-              <img src="PLC.png" alt="" width="280px" height="280px">
+              <img src="https://kietsteven.github.io/Viamlab_research_web/PLC.png" alt="" width="280px" height="280px">
                 <p>Figure 2:Function control system</p>
             </div>
             <p></p>
@@ -386,7 +383,7 @@ footer {
              <p>Temperature control and level control are widely concerned nowadays, especially in industry and agriculture. In the factories that specialize in producing chemical and beverage, the requirements concerning liquid’s temperature and volume (or level) are very strict. Therefore, researching a appropriate solution for this problem would be a tremendous help to quality management as well as production optimization.</p>
              <p>Our model consists of a controlling tank and a storage tank. After being pumped into the controlling tank, the liquid is periodically heated using heater resistor. A pump is controlled by PLC and inverter to pump the required amount of liquid into the storage tank. The model also uses a PID controller to control the tank temperature. Additionally, the model is equipped with HMI interface, SCADA interface, LAN based web server, IOT-intergrated database to supervise the system</p>
             <div style="text-align: center;">
-              <img src="heating_tank.png" alt="" width="280px" height="280px">
+              <img src="https://kietsteven.github.io/Viamlab_research_web/heating_tank.png" alt="" width="280px" height="280px">
             </div>
             <p>Under development:</p>
              <ul>
@@ -403,7 +400,7 @@ footer {
              <p>Our filling model is built based on the design of the filling systems used in beverage, chemical factories,...</p>
              <p>Operation: A bottle is brought into the system and carried along the conveyor -> the sensors detect the bottle and stop the conveyor -> the system fills the bottle with water from the storage tank -> the amount of water is measured by a flow sensor -> when the bottle is full, the system stop pumping out water, the conveyor moves again and a new filling process begin</p>
              <div style="text-align: center;">
-              <img src="filling_system.png" alt="" width="280px" height="280px">
+              <img src="https://kietsteven.github.io/Viamlab_research_web/filling_system.png" alt="" width="280px" height="280px">
             </div>
              <h4>Feature:</h4>
               <ul>
@@ -423,7 +420,7 @@ footer {
               <p>The classification of products according to the characteristics of the products is very popular in the industry such as classification of substandard products, according to color, height, ... so that products with similar characteristics can be arranged. In this model, the material and height characteristics are used to classify products.</p>
               <p>Operating procedure: The product is put on the conveyor belt -> the height sensor will measure the height -> the metal sensor will recognize whether the material is metal -> If it is metal and set the height, the cylinder will push then the product will pick up the product tray into the hands on the second floor warehouse (store has 2 floors: 1st floor: nonmetals, 2nd floor: metal) -> If the product is metal but not the correct height, the product will go out of the conveyor ->  non-metallic sensor -> If the product is non-metal and the correct height, the cylinder pushes the product to the tray and then the picker takes the product away</p>
               <div style="text-align: center;">
-              <img src="classification.png" alt="" width="280px" height="280px">
+              <img src="https://kietsteven.github.io/Viamlab_research_web/classification.png" alt="" width="280px" height="280px">
             </div>
               <h4>Feature:</h4>
                <ul>
@@ -452,28 +449,28 @@ footer {
 
       <div id="con13" style="display: none;">
               <div style="text-align: center;">
-                <img src="iiot_platform.png" alt="" width="800px" height="800px">
+                <img src="https://kietsteven.github.io/Viamlab_research_web/iiot_platform.png" alt="" width="800px" height="800px">
                   <h4>IOT PLATFORM</h4>
               </div>
       </div>
 
       <div id="con14" style="display: none;">
               <div style="text-align: center;">
-                <img src="manufacturing.png" alt="" width="800px" height="800px">
+                <img src="https://kietsteven.github.io/Viamlab_research_web/manufacturing.png" alt="" width="800px" height="800px">
                   <h4>MANUFACTURING EXCECUTION SYSTEM</h4>
               </div>
       </div>
 
       <div id="con15" style="display: none;">
               <div style="text-align: center;">
-                <img src="warehouse.png" alt="" width="800px" height="800px">
+                <img src="https://kietsteven.github.io/Viamlab_research_web/warehouse.png" alt="" width="800px" height="800px">
                   <h4>WAREHOUSE MANAGEMENT SYSTEM</h4>
               </div>
       </div>
 
       <div id="con16" style="display: none;">
               <div style="text-align: center;">
-                <img src="computerized.png" alt="" width="800px" height="800px">
+                <img src="https://kietsteven.github.io/Viamlab_research_web/computerized.png" alt="" width="800px" height="800px">
                   <h4>COMPUTERIZED MAINTENANCE MANAGEMENT SYSTEM</h4>
               </div>
 
@@ -481,7 +478,7 @@ footer {
 
       <div id="con17" style="display: none;">
               <div style="text-align: center;">
-                <img src="machine.png" alt="" width="800px" height="800px">
+                <img src="https://kietsteven.github.io/Viamlab_research_web/machine.png" alt="" width="800px" height="800px">
                   <h4>MACHINE MONITORING SYSTEM</h4>
               </div>
       </div>
@@ -491,7 +488,7 @@ footer {
             <h4>Introduction:</h4>
             <p>Hình 1: Structure & Algorithm of the Designed Smart Home</p>
             <p>Xem video tại :</p>
-            <iframe width="1300" height="975" src="https://www.youtube.com/embed/videoseries?list=PLc7Bg7xoyBQYcwDNho3ImMmB7HgcD3cyd" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLc7Bg7xoyBQYcwDNho3ImMmB7HgcD3cyd" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
       </div>
 
       <div id="con19" style="display: none;">
@@ -531,26 +528,26 @@ footer {
   </div>
 <!-- container -->
 
-<footer class="footer">
-    <div class="footer-content">
-        <div class="contact-info">
-            <p><strong>Email:</strong><br>
-             viamlab@gmail.com<br>
-             tnhuy@hcmut.edu.vn<br>
-             Mobile: (+84)989052413<br>
-              Địa chỉ: Trường Đại học Bách Khoa TP.HCM, 268 Lý Thường Kiệt, quận 10, TP.HCM
-            </p>
-          </div>
-            <div class="language">
-             <p><strong>LANGUAGE:</strong></p>
-             <p><img src="https://flagcdn.com/w40/gb.png" alt="English flag" width="20px" height="20px"> English</p>
-             <p><img src="https://flagcdn.com/w40/vn.png" alt="Vietnamese flag" width="20px" height="20px"> Tiếng Việt</p>   
+    <!-- <footer class="footer">
+        <div class="footer-content">
+            <div class="contact-info">
+                <p><strong>Email:</strong><br>
+                  viamlab@gmail.com<br>
+                  tnhuy@hcmut.edu.vn<br>
+                  Mobile: (+84)989052413<br>
+                  Địa chỉ: Trường Đại học Bách Khoa TP.HCM, 268 Lý Thường Kiệt, quận 10, TP.HCM
+                </p>
             </div>
-    </div>
-        <div class="copyright">
-          © 2018 unitylabs. trademarks and brands are the property of their respective owners.
+            <div class="language">
+                <p><strong>LANGUAGE:</strong></p>
+                <p><img src="https://flagcdn.com/w40/gb.png" alt="English flag" width="20px" height="20px"> English</p>
+                <p><img src="https://flagcdn.com/w40/vn.png" alt="Vietnamese flag" width="20px" height="20px"> Tiếng Việt</p>   
+            </div>
         </div>
-</footer>
+            <div class="copyright">
+                © 2018 unitylabs. trademarks and brands are the property of their respective owners.
+            </div>
+    </footer> -->
 
     <script>
       // Ẩn tất cả các con
@@ -566,9 +563,9 @@ footer {
         let btn = document.getElementById("m" + i);
           if (btn) {
             btn.addEventListener("click", function () {
-              hideAll(); // Ẩn hết trước
-              let con = document.getElementById("con" + i);
-              if (con) con.style.display = "block"; // Hiện đúng cái cần
+                hideAll(); // Ẩn hết trước
+                let con = document.getElementById("con" + i);
+                if (con) con.style.display = "block"; // Hiện đúng cái cần
               });
           }
       }
