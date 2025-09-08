@@ -50,6 +50,7 @@
     .section-title {
         font-weight: bold;
     }
+    
 /*
     .footer {
       width: 1920px;
@@ -85,6 +86,73 @@
       margin-top: auto;
     }
 */
+
+/*
+ *    Tương thích mọi loại màn hình
+ */
+
+    /* Smartphones (portrait and landscape) ----------- */
+    @media only screen 
+    and (min-device-width : 320px) 
+    and (max-device-width : 480px) {
+      /* Styles */
+    }
+
+
+    /* Smartphones (landscape) ----------- */
+    @media only screen 
+    and (min-width : 321px) {
+      /* Styles */
+    }
+
+    /* Smartphones (portrait) ----------- */
+    @media only screen 
+    and (max-width : 320px) {
+      /* Styles */
+    }
+
+    /* iPads (portrait and landscape) ----------- */
+    @media only screen 
+    and (min-device-width : 768px) 
+    and (max-device-width : 1024px) {
+      /* Styles */
+    }
+
+    /* iPads (landscape) ----------- */
+    @media only screen 
+    and (min-device-width : 768px) 
+    and (max-device-width : 1024px) 
+    and (orientation : landscape) {
+      /* Styles */
+    }
+
+    /* iPads (portrait) ----------- */
+    @media only screen 
+    and (min-device-width : 768px) 
+    and (max-device-width : 1024px) 
+    and (orientation : portrait) {
+      /* Styles */
+    }
+
+    /* Desktops and laptops ----------- */
+    @media only screen 
+    and (min-width : 1224px) {
+      /* Styles */
+    }
+
+    /* Large screens ----------- */
+    @media only screen 
+    and (min-width : 1824px) {
+      /* Styles */
+    }
+
+    /* iPhone 4 - 5s ----------- */
+    @media
+    only screen and (-webkit-min-device-pixel-ratio : 1.5),
+    only screen and (min-device-pixel-ratio : 1.5) {
+      /* Styles */
+    }
+
 
   </style>
 
@@ -214,14 +282,6 @@
     <button id="m5" class="menu-button">MANIPULATOR APPLICATION</button>
 
         <h3>B. AUTOMATION AND SMART MANUFACTURING</h3>
-    <div class="section-title">Automation Training Kits</div>
-    <button id="m6" class="menu-button">FLEXIBLE MANUFACTURING SYSTEM</button>
-    <button id="m7" class="menu-button">OBJECT CLASSIFICATION SYSTEM</button>
-    <button id="m8" class="menu-button">PAINT MIXING TANK</button>
-    <button id="m9" class="menu-button">HEATING TANK</button>
-    <button id="m10" class="menu-button">FILLING SYSTEM</button>
-    <button id="m11" class="menu-button">CLASSIFICATION AND STORING SYSTEM</button>
-    <button id="m12" class="menu-button">AUGMENTED REALITY</button>
 
     <div class="section-title">Internet of Things</div> 
     <button id="m13" class="menu-button">IOT PLATFORM</button>
@@ -231,12 +291,21 @@
     <button id="m15" class="menu-button">WAREHOUSE MANAGEMENT SYSTEM</button>
     <button id="m16" class="menu-button">MAINTENANCE EXECUTION SYSTEM</button>
     <button id="m17" class="menu-button">MACHINE MONITORING SYSTEM</button>
+    
+    <div class="section-title">Automation Training Kits</div>
+    <button id="m6" class="menu-button">FLEXIBLE MANUFACTURING SYSTEM</button>
+    <button id="m7" class="menu-button">OBJECT CLASSIFICATION SYSTEM</button>
+    <button id="m8" class="menu-button">PAINT MIXING TANK</button>
+    <button id="m9" class="menu-button">HEATING TANK</button>
+    <button id="m10" class="menu-button">FILLING SYSTEM</button>
+    <button id="m11" class="menu-button">CLASSIFICATION AND STORING SYSTEM</button>
+    <button id="m12" class="menu-button">AUGMENTED REALITY</button>
+
     <!-- den day la dung -->
         <h3>C. SMART HOME</h3>
     <button id="m18" class="menu-button">SMART HOUSE</button>
     <button id="m19" class="menu-button">DIGITAL WATER CURTAIN</button>
    </div>
-
      <div class="content">
 
       <div id="con1">
@@ -260,7 +329,7 @@
               <li>Can be weaponized and used for various purposes in the military.</li>
               <li> In addition, USV can be combined with AUV, ROV and UAV to form an automatic system for multiple purposes both in the air and water.</li>
              </ul>
-             <a href="http://viamlab.com/usv/">Current research :>></a>
+             <a style="display: flex;"   href="http://viamlab.com/usv/">Current research :>></a>
       </div>
 
 <!-- Nội dung tạm ẩn tương ứng với m2 → m17 -->
@@ -375,7 +444,16 @@
       </div>
 
       <div id="con8" style="display: none;">
-          <h2>PAINT MIXING TANK</h2>
+          <h2>MIXING TANK SYSTEM</h2>
+          <p>Our mixing tank system demonstrates a simple mixing process: fetching constitutive colourants (red, blue, yellow) -> computing the amount of each colourants -> mixing and blending to produce a new batch of colourant -> canning finished product.</p>
+          <img src="mixing_tank_system.png" alt="" width="280px" height="280px">
+          <h4>Feature:</h4>
+          <ul>
+            <li>Direct control using HMI</li>
+            <li>Remote supervisory control through the use of SCADA and WebServer</li>
+            <p>Watch video:</p>
+            <a href="https://www.youtube.com/watch?v=e_amv3fT85M">link youtube</a>
+          </ul>
       </div>
 
       <div id="con9" style="display: none;">
@@ -487,68 +565,39 @@
           <h2>SMART HOUSE</h2>
             <h4>Introduction:</h4>
             <p>Hình 1: Structure & Algorithm of the Designed Smart Home</p>
-            <p>Xem video tại :</p>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLc7Bg7xoyBQYcwDNho3ImMmB7HgcD3cyd" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+            <p>Xem video tại:</p>
+            <iframe width="768" height="432" src="https://www.youtube.com/embed/videoseries?list=PLc7Bg7xoyBQYcwDNho3ImMmB7HgcD3cyd" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
       </div>
 
       <div id="con19" style="display: none;">
           <h2>Digital Water Curtain</h2>
             <p>Digital water curtainis an image display system with water by controlling the opening and closing valves in a given scenario. In recent years, these systems have appeared more and more, bringing about economic benefits and are widely applied in the field of decoration, advertising for events, commercial center and product showroom...With the new addition, the ability to combine music and light will evoke more emotions for users than the conventional lighting system.</p>
             <p>The demand for equipment is huge, but the cost of investing in digital water curtain is quite high due to the need to import from abroad and the maintenance and replacement is also difficult.Therefore, the localization trend of digital water curtainin the market is an urgent need to increase competitiveness compared to imported products.</p>
-
-            <h4>GUI on PC:</h4>
-            <p>The image import program needs to be displayed on the water screen</p>
+              <div style="text-align: center;">
+                  <img src="digital_water_curtain.png" alt="" width="150px" height="150px">
+                  <p>Figure 1: Digital water curtain</p>
+              </div>
+              <div style="text-align: center;">
+                  <img src="control_system.png" alt="" width="480px" height="480px">
+                  <p>Figure 2: Control system</p>
+              </div>
+            <p><strong>GUI on PC:</strong> The image import program needs to be displayed on the water screen</p>
             <ul>
               <li>Import any image into a black and white image.</li>
               <li>Scale image size to fit the number of valves on the screen.</li>
               <li>Perform the script and transfer the image data down to store in the SD-Card.</li>
             </ul>
-
-            <h4>Smart phone:</h4>
-            <p>Import images or create your own picture.</p>
-
-            <h4>Microcontroller:</h4>
-            <p>Boards are mainly used to handle and control valve tasks so that an image or a preset script can be displayed on the water screen..</p>
-
-            <h4>Driver:</h4>
-            <p>Used to convert the MCU signal into a water valve shutoff.</p>
-
-            <h4>Curtain:</h4>
-            <p>The mechanical system is fitted with control valves.</p>
-
-            <h4>The light controller is based on the audio signal:</h4>
-            <p>increase the attractive effect of digital water curtain</p>
-
+            <p><strong>Smart phone:</strong> Import images or create your own picture.</p>
+            <p><strong>Microcontroller:</strong> Boards are mainly used to handle and control valve tasks so that an image or a preset script can be displayed on the water screen..</p>
+            <p><strong>Driver:</strong> Used to convert the MCU signal into a water valve shutoff.</p>
+            <p><strong>Curtain:</strong> The mechanical system is fitted with control valves.</p>
+            <p><strong>The light controller is based on the audio signal:</strong> increase the attractive effect of digital water curtain</p>
             <p>Watch video:</p>
-            
+            <iframe width="768" height="432" src="https://www.youtube.com/embed/PpP1KmMeC3s?list=PLc7Bg7xoyBQZgKUFUDe1HEylr_WJBuVGo&index=3" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
       </div>
 
-    </div> 
-<!-- content     -->
+     </div> 
   </div>
-<!-- container -->
-
-    <!-- <footer class="footer">
-        <div class="footer-content">
-            <div class="contact-info">
-                <p><strong>Email:</strong><br>
-                  viamlab@gmail.com<br>
-                  tnhuy@hcmut.edu.vn<br>
-                  Mobile: (+84)989052413<br>
-                  Địa chỉ: Trường Đại học Bách Khoa TP.HCM, 268 Lý Thường Kiệt, quận 10, TP.HCM
-                </p>
-            </div>
-            <div class="language">
-                <p><strong>LANGUAGE:</strong></p>
-                <p><img src="https://flagcdn.com/w40/gb.png" alt="English flag" width="20px" height="20px"> English</p>
-                <p><img src="https://flagcdn.com/w40/vn.png" alt="Vietnamese flag" width="20px" height="20px"> Tiếng Việt</p>   
-            </div>
-        </div>
-            <div class="copyright">
-                © 2018 unitylabs. trademarks and brands are the property of their respective owners.
-            </div>
-    </footer> -->
-
     <script>
       // Ẩn tất cả các con
       function hideAll() {
