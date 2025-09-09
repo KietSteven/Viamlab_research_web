@@ -52,9 +52,6 @@
     .section-title {
       font-weight: bold;
     }
-    .menu-button {
-      font-size: 14px
-    }
     h4 {
       font-size: 15px;
       font-family: Arial;
@@ -309,7 +306,7 @@
       <div id="con2" style="display: none;">
           <h2>REMOTELY OPERATED UNDERWATER VEHICLE (ROV)</h2>
             <h4>Introduction:</h4>
-              <p>R  OV is an underwater vehicle remotely controlled by cables and thrusters, varied in shape and size. ROV is regarded as a modern tool that enables people to explore the underwater world, perform many tasks at depths that humans can not reach. It can work under water for long periods, in harsh environment. Often there is a video camera, carrying sensors and hand-held machines, serving a variety of tasks for military and civil purposes.</p>
+              <p>ROV is an underwater vehicle remotely controlled by cables and thrusters, varied in shape and size. ROV is regarded as a modern tool that enables people to explore the underwater world, perform many tasks at depths that humans can not reach. It can work under water for long periods, in harsh environment. Often there is a video camera, carrying sensors and hand-held machines, serving a variety of tasks for military and civil purposes.</p>
             <h4>Application:</h4>
              <ul>
               <li>Set up / remove mines, torpedoes</li>
@@ -540,7 +537,7 @@
           <h2>SMART HOUSE</h2>
             <h4>Introduction:</h4>
             <div style="text-align: center;">
-                <img src="smart_home.png" alt="" width="280px" height="280px">
+                <img src="https://kietsteven.github.io/Viamlab_research_web/smart_home.png" alt="" width="280px" height="280px">
                 <p>Hình 1: Structure & Algorithm of the Designed Smart Home</p>
             </div>
             <p>Xem video tại:</p>
@@ -596,6 +593,19 @@
               });
           }
       }
+
+      // Lấy tất cả các button có class "menu-button"
+        const buttons = document.querySelectorAll(".menu-button");
+
+        // Gán sự kiện click
+        buttons.forEach(button => {
+          button.addEventListener("click", () => {
+            window.scrollTo({
+              top: 200,
+              behavior: "smooth"  // cuộn mượt
+            });
+          });
+        });
     </script>
 </body>
 </html>
