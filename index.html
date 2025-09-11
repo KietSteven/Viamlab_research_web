@@ -18,13 +18,14 @@
 
     .container {
       width: 1920px;
+      width: 100%;
       display: flex;
     }
     .sidebar {
-      width: 20%;
+      width: 25%;
       background: #f1f1f1;
       padding: 1em;
-      margin-left: 10%; /* Thêm khoảng cách bên trái */
+      margin-left: 5%; /* Thêm khoảng cách bên trái */
     }
     .sidebar h3 {
       background: #004c80;
@@ -42,7 +43,7 @@
       flex: 1;
       padding: 20px 20px; /* TRÊN-DƯỚI 30px, TRÁI-PHẢI 50px */
       max-width: 800px;   /* Giới hạn chiều ngang để không bị tràn */
-      text-align: justify; /* Căn đều 2 bên cho đẹp */
+      text-align: left; /* Căn lề trái */
       font-size: 14px;
     }
     img {
@@ -62,6 +63,21 @@
  */
 
     /* Smartphones (portrait and landscape) ----------- */
+    @media (max-width: 768px) {
+      .sidebar {
+        width: 100%;
+        margin-left: 0;
+      }
+      .content {
+        max-width: 100%;
+        padding: 10px;
+      }
+      .container {
+        flex-direction: column;
+      }
+    }
+
+
     @media only screen 
     and (min-device-width : 320px) 
     and (max-device-width : 480px) {
@@ -287,7 +303,7 @@
               <!-- <img src="unmanned.png" class="center-img" alt="" width="480px" height="480px"> -->
                 <div style="text-align: center;">
                   <img src="https://kietsteven.github.io/Viamlab_research_web/unmanned.png" alt="" width="480px" height="480px">
-                  <p>Figure 1: UNMANNED SURFACE VEHICLE (USV)</p>
+                  <p>Figure 1: Unmanned Surface Vehicle (USV)</p>
                 </div>
                 <div style="text-align: center;">
                   <img src="https://kietsteven.github.io/Viamlab_research_web/USV_KIAL.png" alt="" width="480px" height="480px">
@@ -301,11 +317,11 @@
               <li>Patrol and scout</li>
               <li>Transferring information or carrying device.</li>
               <li>Can be weaponized and used for various purposes in the military.</li>
-              <li> In addition, USV can be combined with AUV, ROV and UAV to form an automatic system for multiple purposes both in the air and water.</li>
+              <li>In addition, USV can be combined with AUV, ROV and UAV to form an automatic system for multiple purposes both in the air and water.</li>
              </ul>
              <a style="color: blue; text-decoration: underline; font-size: 16px;" href="http://viamlab.com/usv/">Current research</a>
              
-             <p>Watch video:</p>
+             <p><br>Watch video:</p>
              <iframe width="768" height="432" src="https://youtube.com/embed/J7D-GmNX5Js" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
 
              <p style="font-size: 16px;"> <strong>For more information: </strong> </p>
@@ -642,6 +658,7 @@
           }
       }
 
+/*
       // Lấy tất cả các button có class "menu-button"
         const buttons = document.querySelectorAll(".menu-button");
 
@@ -651,6 +668,22 @@
             window.scrollTo({
               top: 200,
               behavior: "smooth"  // cuộn mượt
+            });
+          });
+        });
+*/
+
+        // Lấy tất cả các button có class "menu-button"
+        const buttons = document.querySelectorAll(".menu-button");
+
+        buttons.forEach(button => {
+          button.addEventListener("click", () => {
+            // Nếu là màn hình nhỏ hơn 768px (điện thoại)
+            const isMobile = window.innerWidth <= 768;
+
+            window.scrollTo({
+              top: isMobile ? 1500 : 200, // Mobile: 500px, Desktop: 20px
+              behavior: "smooth"
             });
           });
         });
