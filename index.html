@@ -58,6 +58,9 @@
       font-family: Arial;
       font-weight: bold;
     }
+    .remove_underline {
+      text-decoration: none;
+    }
 /*
  *    Tương thích mọi loại màn hình
  */
@@ -258,9 +261,16 @@
 <body>
   <div class="container">
    <div class="sidebar">
+
+     <a class="remove_underline" href="https://www.youtube.com/@VIAMLAB/featured" target="_blank">
+      <i class="fab fa-youtube" style="font-size:20px; color:red;"></i>
+     </a>         
+     <a class="remove_underline" style="color: blue; font-size: 18px;" href="https://www.youtube.com/@VIAMLAB/featured">VIAM LAB PROJECTS</a><br>
+     <a class="remove_underline" href="index.html"> <img src="https://flagcdn.com/w20/us.png" alt="🇺🇸 USA Flag"> English</a><br>
+     <a class="remove_underline" href="i_tiengviet.html"> <img src="https://flagcdn.com/w20/vn.png" alt="🇻🇳 Vietnam Flag"> Tiếng Việt</a>
+
        <h3>A. ROBOTICS</h3>
 
-       <!-- Nho them id -->
     <button id="m1" class="menu-button">UNMANNED SURFACE VEHICLE (USV)</button>
     <button id="m2" class="menu-button">REMOTELY OPERATED UNDERWATER VEHICLE (ROV)</button>
     <button id="m3" class="menu-button">AUTONOMOUS UNDERWATER VEHICLE (AUV)</button>
@@ -323,13 +333,6 @@
              
              <p><br>Watch video:</p>
              <iframe width="768" height="432" src="https://youtube.com/embed/J7D-GmNX5Js" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
-
-             <p style="font-size: 16px;"> <strong>For more information: </strong> </p>
-             <a href="https://www.youtube.com/@VIAMLAB/featured" target="_blank">
-               <i class="fab fa-youtube" style="font-size:20px; color:red;"></i>
-             </a>         
-             <a style="color: blue; font-size: 18px;" href="https://www.youtube.com/@VIAMLAB/featured">VIAM LAB's Channel</a>
-             
       </div>
 
 <!-- Nội dung tạm ẩn tương ứng với m2 → m17 -->
@@ -506,7 +509,7 @@
               <li>Widen the controller’s temperature range to adapt to different kinds of industrial systems</li>
              </ul>
             <p>Watch video:</p>
-            <iframe width="768" height="432" src="https://www.youtube.com/embed/DsuISeBP0y" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+            <iframe width="768" height="432" src="https://www.youtube.com/embed/DsuISeBP0y4?feature=oembed" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
       </div>
 
       <div id="con10" style="display: none;">
@@ -688,5 +691,6 @@
           });
         });
     </script>
+
 </body>
 </html>

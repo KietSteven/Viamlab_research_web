@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VIAM Lab Research</title>
+  <style>
+    body {
+      font-family: Arial;
+      margin: 0;
+      padding: 0;
+    }
+    .center-img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .container {
+      width: 1920px;
+      width: 100%;
+      display: flex;
+    }
+    .sidebar {
+      width: 25%;
+      background: #f1f1f1;
+      padding: 1em;
+      margin-left: 5%; /* Thêm khoảng cách bên trái */
+    }
+    .sidebar h3 {
+      background: #004c80;
+      color: white;
+      padding: 0.5em;
+      font-weight: bold;
+    }
+    .sidebar button {
+      width: 100%;
+      padding: 0.5em;
+      margin: 0.2em 0;
+      cursor: pointer;
+    }
+    .content {
+      flex: 1;
+      padding: 20px 20px; /* TRÊN-DƯỚI 30px, TRÁI-PHẢI 50px */
+      max-width: 800px;   /* Giới hạn chiều ngang để không bị tràn */
+      text-align: left; /* Căn lề trái */
+      font-size: 14px;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+    .section-title {
+      font-weight: bold;
+    }
+    h4 {
+      font-size: 15px;
+      font-family: Arial;
+      font-weight: bold;
+    }
+    .remove_underline {
+      text-decoration: none;
+    }
+/*
+ *    Tương thích mọi loại màn hình
+ */
+
+    /* Smartphones (portrait and landscape) ----------- */
+    @media (max-width: 768px) {
+      .sidebar {
+        width: 100%;
+        margin-left: 0;
+      }
+      .content {
+        max-width: 100%;
+        padding: 10px;
+      }
+      .container {
+        flex-direction: column;
+      }
+    }
+
+
+    @media only screen 
+    and (min-device-width : 320px) 
+    and (max-device-width : 480px) {
+      /* Styles */
+    }
+
+
+    /* Smartphones (landscape) ----------- */
+    @media only screen 
+    and (min-width : 321px) {
+      /* Styles */
+    }
+
+    /* Smartphones (portrait) ----------- */
+    @media only screen 
+    and (max-width : 320px) {
+      /* Styles */
+    }
+
+    /* iPads (portrait and landscape) ----------- */
+    @media only screen 
+    and (min-device-width : 768px) 
+    and (max-device-width : 1024px) {
+      /* Styles */
+    }
+
+    /* iPads (landscape) ----------- */
+    @media only screen 
+    and (min-device-width : 768px) 
+    and (max-device-width : 1024px) 
+    and (orientation : landscape) {
+      /* Styles */
+    }
+
+    /* iPads (portrait) ----------- */
+    @media only screen 
+    and (min-device-width : 768px) 
+    and (max-device-width : 1024px) 
+    and (orientation : portrait) {
+      /* Styles */
+    }
+
+    /* Desktops and laptops ----------- */
+    @media only screen 
+    and (min-width : 1224px) {
+      /* Styles */
+    }
+
+    /* Large screens ----------- */
+    @media only screen 
+    and (min-width : 1824px) {
+      /* Styles */
+    }
+
+    /* iPhone 4 - 5s ----------- */
+    @media
+    only screen and (-webkit-min-device-pixel-ratio : 1.5),
+    only screen and (min-device-pixel-ratio : 1.5) {
+      /* Styles */
+    }
+
+
+  </style>
+
+  <script>
+      var m1 = document.getElementById("m1");
+      var m2 = document.getElementById("m2");
+      var m3 = document.getElementById("m3");
+      var m4 = document.getElementById("m4");
+      var m5 = document.getElementById("m5");
+      var m6 = document.getElementById("m6");
+      var m7 = document.getElementById("m7");
+      var m8 = document.getElementById("m8");
+      var m9 = document.getElementById("m9");
+      var m10 = document.getElementById("m10");
+      var m11 = document.getElementById("m11");
+      var m12 = document.getElementById("m12");
+      var m13 = document.getElementById("m13");
+      var m14 = document.getElementById("m14");
+      var m15 = document.getElementById("m15");
+      var m16 = document.getElementById("m16");
+      var m17 = document.getElementById("m17");
+      var m18 = document.getElementById("m18");
+      var m19 = document.getElementById("m19");
+
+      var con1 = document.getElementById("con1");
+      var con2 = document.getElementById("con2");
+      var con3 = document.getElementById("con3");
+      var con4 = document.getElementById("con4");
+      var con5 = document.getElementById("con5");
+      var con6 = document.getElementById("con6");
+      var con7 = document.getElementById("con7");
+      var con8 = document.getElementById("con8");
+      var con9 = document.getElementById("con9");
+      var con10 = document.getElementById("con10");
+      var con11 = document.getElementById("con11");
+      var con12 = document.getElementById("con12");
+      var con13 = document.getElementById("con13");
+      var con14 = document.getElementById("con14");
+      var con15 = document.getElementById("con15");
+      var con16 = document.getElementById("con16");
+      var con17 = document.getElementById("con17");
+      var con18 = document.getElementById("con18");
+      var con19 = document.getElementById("con19");
+
+      var temp = [];
+      var menus = [m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13, m14, m15, m16, m17, m18, m19];
+      var contents = [con1, con2, con3, con4, con5, con6, con7, con8, con9, con10, con11, con12, con13, con14, con15, con16, con17, con18, con19];
+      for (var i = 0; i < 19; i++) {
+          temp[i] = contents[i].innerHTML;
+      }
+      function clear() {
+          for (var i = 1; i < 19; i++) {
+              contents[i].innerHTML = "";
+          }
+      }
+      clear();
+      m1.onclick = function direct1() {
+          con1.innerHTML = temp[0]
+      }
+      m2.onclick = function direct2() {
+          con1.innerHTML = temp[1]
+      }
+      m3.onclick = function direct3() {
+          con1.innerHTML = temp[2]
+      }
+      m4.onclick = function direct4() {
+          con1.innerHTML = temp[3]
+      }
+      m5.onclick = function direct5() {
+          con1.innerHTML = temp[4]
+      }
+      m6.onclick = function direct6() {
+          con1.innerHTML = temp[5]
+      }
+      m7.onclick = function direct7() {
+          con1.innerHTML = temp[6]
+      }
+      m8.onclick = function direct8() {
+          con1.innerHTML = temp[7]
+      }
+      m9.onclick = function direct9() {
+          con1.innerHTML = temp[8]
+      }
+      m10.onclick = function direct10() {
+          con1.innerHTML = temp[9]
+      }
+      m11.onclick = function direct11() {
+          con1.innerHTML = temp[10]
+      }
+      m12.onclick = function direct12() {
+          con1.innerHTML = temp[11]
+      }
+      m13.onclick = function direct13() {
+          con1.innerHTML = temp[12]
+      }
+      m14.onclick = function direct14() {
+          con1.innerHTML = temp[13]
+      }
+      m15.onclick = function direct15() {
+          con1.innerHTML = temp[14]
+      }
+      m16.onclick = function direct16() {
+          con1.innerHTML = temp[15]
+      }
+      m17.onclick = function direct17() {
+          con1.innerHTML = temp[16]
+      }
+      m18.onclick = function direct18() {
+          con1.innerHTML = temp[17]
+      }
+      m19.onclick = function direct19() {
+          con1.innerHTML = temp[18]
+      }
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+   <div class="sidebar">
+
+     <a class="remove_underline" href="https://www.youtube.com/@VIAMLAB/featured" target="_blank">
+      <i class="fab fa-youtube" style="font-size:20px; color:red;"></i>
+    </a>         
+     <a class="remove_underline" style="color: blue; font-size: 18px;" href="https://www.youtube.com/@VIAMLAB/featured">DỰ ÁN VIAM LAB</a><br>
+     <a class="remove_underline" href="index.html"> <img src="https://flagcdn.com/w20/us.png" alt="🇺🇸 USA Flag"> English</a><br>
+     <a class="remove_underline" href="i_tiengviet.html"> <img src="https://flagcdn.com/w20/vn.png" alt="🇻🇳 Vietnam Flag"> Tiếng Việt</a>
+
+       <h3>A. ROBOTICS</h3>
+
+    <button id="m1" class="menu-button">PHƯƠNG TIỆN MẶT NƯỚC KHÔNG NGƯỜI LÁI (USV)</button>
+    <button id="m2" class="menu-button">ROBOT DƯỚI NƯỚC ĐIỀU KHIỂN TỪ XA (ROV)</button>
+    <button id="m3" class="menu-button">ROBOT DƯỚI NƯỚC TỰ HÀNH (AUV)</button>
+    <button id="m4" class="menu-button">ĐỊNH VỊ - DẪN ĐƯỜNG</button>
+    <button id="m5" class="menu-button">ỨNG DỤNG CÁNH TAY ROBOT</button>
+
+        <h3>B. TỰ ĐỘNG HÓA VÀ SẢN XUẤT THÔNG MINH</h3>
+
+    <div class="section-title">Internet vạn vật (IOT)</div> 
+    <button id="m13" class="menu-button">NỀN TẢNG IOT</button>
+
+    <div class="section-title">Nhà máy thông minh</div>
+    <button id="m14" class="menu-button">HỆ THỐNG THỰC THI SẢN XUẤT</button>
+    <button id="m15" class="menu-button">HỆ THỐNG QUẢN LÝ KHO</button>
+    <button id="m16" class="menu-button">HỆ THỐNG QUẢN LÝ BẢO TRÌ</button>
+    <button id="m17" class="menu-button">HỆ THỐNG GIÁM SÁT MÁY MÓC</button>
+    
+    <div class="section-title">Bộ kit đào tạo tự động hóa</div>
+    <button id="m6" class="menu-button">HỆ THỐNG SẢN XUẤT LINH HOẠT</button>
+    <button id="m7" class="menu-button">HỆ THỐNG PHÂN LOẠI VẬT THỂ</button>
+    <button id="m8" class="menu-button">HỆ THỐNG BỒN TRỘN</button>
+    <button id="m9" class="menu-button">BỒN GIA NHIỆT</button>
+    <button id="m10" class="menu-button">HỆ THỐNG CHIẾT RÓT</button>
+    <button id="m11" class="menu-button">HỆ THỐNG PHÂN LOẠI VÀ LƯU TRỮ</button>
+    <button id="m12" class="menu-button">THỰC TẾ TĂNG CƯỜNG (AR)</button>
+
+    <!-- đến đây là xong -->
+        <h3>C. NHÀ THÔNG MINH</h3>
+    <button id="m18" class="menu-button">NHÀ THÔNG MINH</button>
+    <button id="m19" class="menu-button">MÀN NƯỚC SỐ</button>
+
+   </div>
+     <div class="content">
+
+      <div id="con1">
+          <h2>PHƯƠNG TIỆN MẶT NƯỚC KHÔNG NGƯỜI LÁI (USV)</h2>
+            <h4>Giới thiệu:</h4>
+              <p>
+              Phương tiện mặt nước không người lái - USV được biết đến như một phương tiện hiện đại hỗ trợ con người khám phá môi trường nước. Nó có thể được điều khiển từ xa hoặc hoạt động tự động để thực hiện các nhiệm vụ khác nhau.
+              </p>
+                <div style="text-align: center;">
+                  <img src="https://kietsteven.github.io/Viamlab_research_web/unmanned.png" alt="" width="480px" height="480px">
+                  <p>Hình 1: Phương tiện mặt nước không người lái (USV)</p>
+                </div>
+                <div style="text-align: center;">
+                  <img src="https://kietsteven.github.io/Viamlab_research_web/USV_KIAL.png" alt="" width="480px" height="480px">
+                  <p>Hình 2: KIAL-UDB, sản phẩm hoàn thiện</p>
+                </div>
+            <h4>Ứng dụng:</h4>
+            <ul>
+              <li>Nghiên cứu và giám sát môi trường.</li>
+              <li>Lấy mẫu nước.</li>
+              <li>Vẽ bản đồ.</li>
+              <li>Tuần tra và trinh sát.</li>
+              <li>Truyền thông tin hoặc mang theo thiết bị.</li>
+              <li>Có thể trang bị vũ khí và sử dụng cho nhiều mục đích trong quân sự.</li>
+              <li>Ngoài ra, USV có thể kết hợp với AUV, ROV và UAV để tạo thành hệ thống tự động phục vụ nhiều mục đích cả trên không và dưới nước.</li>
+            </ul>
+            <a style="color: blue; text-decoration: underline; font-size: 16px;" href="http://viamlab.com/usv/">Nghiên cứu hiện tại</a>
+            
+            <p><br>Xem video:</p>
+            <iframe width="768" height="432" src="https://youtube.com/embed/J7D-GmNX5Js" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>            
+      </div>
+
+      <div id="con2" style="display: none;">
+          <h2>PHƯƠNG TIỆN DƯỚI NƯỚC ĐIỀU KHIỂN TỪ XA (ROV)</h2>
+            <h4>Giới thiệu:</h4>
+              <p>ROV là phương tiện dưới nước được điều khiển từ xa bằng cáp và động cơ đẩy, đa dạng về hình dạng và kích thước. ROV được coi là công cụ hiện đại giúp con người khám phá thế giới dưới nước, thực hiện nhiều nhiệm vụ ở độ sâu mà con người không thể tiếp cận. Nó có thể làm việc dưới nước trong thời gian dài, trong môi trường khắc nghiệt. Thường được trang bị camera, cảm biến và cánh tay cơ khí, phục vụ nhiều nhiệm vụ quân sự và dân sự.</p>
+            <div style="text-align: center;">
+                  <img src="https://kietsteven.github.io/Viamlab_research_web/VIAM_ROV_500.png" alt="" width="480px" height="480px">
+                  <p>Hình 1: VIAM - ROV500</p>
+            </div>
+            <div style="text-align: center;">
+                  <img src="https://kietsteven.github.io/Viamlab_research_web/VIAM_ROV_900.png" alt="" width="480px" height="480px">
+                  <p>Hình 2: VIAM - ROV900</p>
+            </div>
+            <div style="text-align: center;">
+                  <img src="https://kietsteven.github.io/Viamlab_research_web/ROV_KIAL.png" alt="" width="480px" height="480px">
+                  <p>Hình 3: KIAL - CROV</p>
+            </div>
+            <h4>Ứng dụng:</h4>
+            <ul>
+              <li>Lắp đặt / gỡ bỏ mìn, ngư lôi.</li>
+              <li>Hỗ trợ con người trong chiến đấu.</li>
+              <li>Tuần tra, an ninh và cứu hộ.</li>
+              <li>Thăm dò dầu khí, khoáng sản.</li>
+              <li>Đóng/mở van, sửa chữa đường ống, bảo trì giàn khoan.</li>
+              <li>Đào, lắp đặt, kiểm tra cáp ngầm.</li>
+              <li>Thu thập thông tin địa lý, sinh vật biển.</li>
+              <li>Khảo cổ dưới nước, khám phá tàu đắm.</li>
+            </ul>
+            
+            <p>Xem video:</p>
+            <iframe width="768" height="432" src="https://youtube.com/embed/bWml8bwyNkc?list=PLc7Bg7xoyBQag8-jyTHx7aMIk9cXDtdnp&index=2" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>  
+            <a style="color: blue; text-decoration: underline; font-size: 16px;" href="http://viamlab.com/en/tieng-viet-rov/">Nghiên cứu hiện tại</a>           
+      </div>
+
+      <div id="con3" style="display: none;">
+          <h2>PHƯƠNG TIỆN DƯỚI NƯỚC TỰ HÀNH (AUV)</h2>
+            <h4>Giới thiệu:</h4>
+              <p>AUV có thể được coi là phiên bản cải tiến của ROV, là phương tiện không người lái có tính tự động cao dùng cho các ứng dụng dưới nước. Thường có dạng ngư lôi với hệ thống đẩy và điều hướng, tự điều khiển. Có thể hoạt động dưới nước trong thời gian dài, tùy thuộc vào nguồn năng lượng. AUV được trang bị cảm biến phục vụ nhiều nhiệm vụ quân sự và dân sự.</p>
+              <div style="text-align: center;">
+                  <img src="https://kietsteven.github.io/Viamlab_research_web/auv.png" alt="" width="480px" height="480px">
+                  <p>Hình 1: VIAM-AUV2000</p>
+              </div>
+              <div style="text-align: center;">
+                  <img src="https://kietsteven.github.io/Viamlab_research_web/auv_kial.png" alt="" width="480px" height="480px">
+                  <p>Hình 2: KIAL-AUV</p>
+              </div>
+            <h4>Ứng dụng:</h4>
+            <ul>
+              <li>Lập bản đồ đáy biển.</li>
+              <li>Khảo sát và giám sát theo khu vực.</li>
+              <li>Thăm dò địa chất bề mặt, thu thập thông tin về mỏ khoáng sản.</li>
+              <li>Phát hiện, tiêu diệt mục tiêu dưới nước, rà phá bom mìn.</li>
+              <li>Thu thập thông tin, giám sát và trinh sát.</li>
+              <li>Tác chiến chống ngầm, khảo sát và nhận dạng.</li>
+              <li>Truyền thông tin và định vị dưới nước.</li>
+              <li>Hỗ trợ tấn công và phòng thủ.</li>
+              <li>Nhiệm vụ đặc biệt (ngư lôi, rải mìn,...)</li>
+            </ul>
+            
+            <p>Xem video:</p>
+            <iframe width="768" height="432" src="https://youtube.com/embed/ET_KhEP_FJU?list=PLc7Bg7xoyBQZayHJKUF1R1Wq9hHS2IiCn" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+            <a style="color: blue; text-decoration: underline; font-size: 16px;" href="http://viamlab.com/en/tieng-viet-auv/">Nghiên cứu hiện tại</a>
+            
+      </div>
+
+      <div id="con4" style="display: none;">
+          <h2>ĐỊNH VỊ & DẪN ĐƯỜNG</h2>
+            <h4>Giới thiệu:</h4>
+              <p>AHRS (Hệ thống tham chiếu hướng và thái độ) là công cụ ước lượng góc nghiêng, lắc, quay của robot tự hành với độ chính xác và tốc độ cập nhật cao. Sử dụng AHRS và cảm biến gia tốc, Hệ thống định vị quán tính (INS) có thể xác định vị trí robot rất chính xác lúc đầu nhưng sai số tăng dần theo thời gian. Kết hợp hệ thống định vị toàn cầu GPS với INS giúp tăng chất lượng ở nhiều khía cạnh như độ chính xác, tốc độ cập nhật,…</p>
+                <div style="text-align: center;">
+                  <img src="https://kietsteven.github.io/Viamlab_research_web/Navigations.png" alt="" width="480px" height="480px">
+                  <p>Thuật toán định vị</p>
+                </div>
+                <div style="text-align: center;">
+                  <img src="https://kietsteven.github.io/Viamlab_research_web/Viam_Navi.png" alt="" width="480px" height="480px">
+                  <p>VIAM-NAVI, sản phẩm hoàn thiện</p>
+                </div>
+            <h4>Ứng dụng:</h4>
+            <ul>
+              <li>Định vị trên mặt đất, mặt nước, dưới nước.</li>
+              <li>Dẫn đường cho phương tiện tự hành.</li>
+              <li>Cung cấp dữ liệu đầu vào cho các ứng dụng điều khiển nâng cao như định vị, cân bằng,…</li>
+            </ul>
+            
+            <p>Xem video:</p>
+            <iframe width="768" height="432" src="https://youtube.com/embed/o9cujzsAN8Y?list=PLc7Bg7xoyBQZiq3ZgzNJDTnRh4e6OLKPv&t" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+            <a style="color: blue; text-decoration: underline; font-size: 16px;" href="http://viamlab.com/en/tieng-viet-ahrs-gps-ins/">Nghiên cứu hiện tại</a>
+      </div>
+
+      <div id="con5" style="display: none;">
+          <h2>ỨNG DỤNG TAY MÁY (MANIPULATOR)</h2>
+            <h4>Giới thiệu:</h4>
+              <p>Nhu cầu sử dụng robot ngày càng tăng trong các quy trình sản xuất phức tạp nhằm tăng năng suất, giảm chi phí, cải thiện chất lượng và độ chính xác, đồng thời giảm rủi ro khi con người làm việc trong môi trường nguy hiểm. Việc thiết kế hệ thống robot hoạt động mà không cần sự can thiệp của con người đang trở nên phổ biến, đặc biệt trong thời đại thị giác máy tính phát triển mạnh mẽ.</p>
+              <div style="text-align: center;">
+                  <img src="https://kietsteven.github.io/Viamlab_research_web/manipulator.png" alt="" width="480px" height="480px">
+              </div>
+            <h4>Ứng dụng:</h4>
+            <ul>
+              <li>Gắp & phân loại vật trên băng chuyền động.</li>
+              <li>Hàn các chi tiết phức tạp.</li>
+              <li>Phun sơn sản phẩm.</li>
+              <li>Thay thế con người trong môi trường nguy hiểm và vận hành liên tục.</li>
+            </ul>
+            
+            <p>Xem video:</p>
+            <iframe width="768" height="432" src="https://youtube.com/embed/InRSUkYmM1k?list=PLc7Bg7xoyBQaGjb5rZjImvAuYE1nWD4Rq" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+            <a style="color: blue; text-decoration: underline; font-size: 16px;" href="http://viamlab.com/en/tieng-viet-manipulator-application/">Nghiên cứu hiện tại</a>
+            
+      </div>
+
+      <div id="con6" style="display: none;">
+          <h2>HỆ THỐNG SẢN XUẤT LINH HOẠT</h2>
+          <div style="text-align: center;">
+              <img src="https://kietsteven.github.io/Viamlab_research_web/rotary_table.png" alt="" width="480px" height="480px">
+              <p>Hình 1: Hệ thống sản xuất linh hoạt</p>
+          </div>
+          <div style="text-align: center;">
+              <img src="https://kietsteven.github.io/Viamlab_research_web/flexible.png" alt="" width="480px" height="480px">
+              <p>Hình 2: Hệ thống sản xuất linh hoạt</p>
+          </div>
+          <p>Xem video:</p>
+          <iframe width="768" height="432" src="https://youtube.com/embed/N7UgWDEVyPg?list=PLc7Bg7xoyBQZtjwLcNWIPMctzxekQ5hgk" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div>
+
+      <div id="con7" style="display: none;">
+          <h2>HỆ THỐNG PHÂN LOẠI VẬT THỂ</h2>
+          <ul>
+              <li>Kết hợp các thiết bị trong tự động hóa công nghiệp như xi lanh, van điện từ, băng chuyền, tay quay, cơ cấu gắp ... vào mô hình phân loại sản phẩm. Đặc biệt cơ cấu gắp gồm hai trục X, Y sử dụng vít me (lead screw) gắn với động cơ bước, còn trục Z là xi lanh hành trình và xi lanh gắp.</li>
+              <li>Sử dụng module điều khiển chuyển động PLC S7-1200 để điều khiển vị trí cho hai động cơ trục X và Y và một nền tảng quay.</li>
+              <li>Sử dụng Matlab để chụp và nhận dạng các quân cờ, sau đó xử lý và truyền tham số vị trí cho PLC theo tọa độ x, y để trạm tự động đặt quân cờ vào vị trí mong muốn.</li>
+              <li>Giám sát, đọc trạng thái và chế độ thủ công để điều khiển các thiết bị từ xa qua Webserver viết bằng HTML, CSS, jQuery và JavaScript.</li>
+          </ul>
+          <div style="text-align: center;">
+              <img src="https://kietsteven.github.io/Viamlab_research_web/classification.png" alt="" width="480px" height="480px">
+              <p>Hình 1: Hệ thống phân loại vật thể</p>
+          </div>
+          <div style="text-align: center;">
+              <img src="https://kietsteven.github.io/Viamlab_research_web/PLC.png" alt="" width="480px" height="480px">
+              <p>Hình 2: Hệ thống điều khiển chức năng</p>
+          </div>
+          <p>Xem video:</p>
+          <iframe width="768" height="432" src="https://youtube.com/embed/umtAHnbDquI?list=PLc7Bg7xoyBQbxYXAjaYNn7DhAbAm_XJO3" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div>
+
+      <div id="con8" style="display: none;">
+        <h2>HỆ THỐNG BỒN TRỘN</h2>
+        <p>Hệ thống bồn trộn của chúng tôi mô phỏng một quy trình trộn đơn giản: lấy các chất tạo màu cơ bản (đỏ, xanh dương, vàng) → tính toán lượng từng chất tạo màu → trộn và khuấy để tạo ra một mẻ màu mới → đóng lon sản phẩm hoàn chỉnh.</p>
+        <div style="text-align: center;">
+          <img src="https://kietsteven.github.io/Viamlab_research_web/mixing_tank_system.png" alt="" width="480px" height="480px">
+        </div>
+        <h4>Tính năng:</h4>
+        <ul>
+          <li>Điều khiển trực tiếp bằng HMI</li>
+          <li>Giám sát điều khiển từ xa thông qua SCADA và WebServer</li>
+          <p>Xem video:</p>
+          <iframe width="768" height="432" src="https://www.youtube.com/embed/e_amv3fT85M" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </ul>
+      </div>
+
+      <div id="con9" style="display: none;">
+          <h2>BỒN GIA NHIỆT</h2>
+          <p>Việc điều khiển nhiệt độ và mức chất lỏng đang được quan tâm rộng rãi hiện nay, đặc biệt trong công nghiệp và nông nghiệp. Ở các nhà máy chuyên sản xuất hóa chất và đồ uống, yêu cầu về nhiệt độ và thể tích (hoặc mực) của chất lỏng rất nghiêm ngặt. Do đó, nghiên cứu một giải pháp phù hợp cho vấn đề này sẽ giúp rất nhiều cho quản lý chất lượng cũng như tối ưu hóa sản xuất.</p>
+          <p>Mô hình của chúng tôi bao gồm một bồn điều khiển và một bồn chứa. Sau khi được bơm vào bồn điều khiển, chất lỏng được gia nhiệt định kỳ bằng điện trở nhiệt. Một máy bơm được điều khiển bởi PLC và biến tần để bơm lượng chất lỏng cần thiết vào bồn chứa. Mô hình cũng sử dụng bộ điều khiển PID để điều chỉnh nhiệt độ bồn. Ngoài ra, mô hình được trang bị giao diện HMI, giao diện SCADA, web server trên LAN và cơ sở dữ liệu tích hợp IoT để giám sát hệ thống.</p>
+          <div style="text-align: center;">
+              <img src="https://kietsteven.github.io/Viamlab_research_web/heating_tank.png" alt="" width="480px" height="480px">
+          </div>
+          <p>Đang phát triển:</p>
+          <ul>
+              <li>Kết hợp với các hệ thống khác để tạo thành dây chuyền sản xuất quy mô lớn</li>
+              <li>Tích hợp máy làm lạnh (chiller) vào đầu ra bơm, ...</li>
+              <li>Mở rộng dải nhiệt độ của bộ điều khiển để thích ứng với các loại hệ thống công nghiệp khác nhau</li>
+          </ul>
+          <p>Xem video:</p>
+          <iframe width="768" height="432" src="https://www.youtube.com/embed/DsuISeBP0y4?feature=oembed" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div>
+
+      <div id="con10" style="display: none;">
+          <h2>HỆ THỐNG CHIẾT RÓT</h2>
+            <p>Mô hình chiết rót của chúng tôi được xây dựng dựa trên thiết kế của các hệ thống chiết rót được sử dụng trong nhà máy đồ uống, nhà máy hóa chất,...</p>
+            <p>Hoạt động: Một chai được đưa vào hệ thống và di chuyển trên băng chuyền → các cảm biến phát hiện chai và dừng băng chuyền → hệ thống chiết rót nước vào chai từ bồn chứa → lượng nước được đo bằng cảm biến lưu lượng → khi chai đầy, hệ thống dừng bơm, băng chuyền tiếp tục chạy và một quá trình chiết rót mới bắt đầu.</p>
+            <div style="text-align: center;">
+              <img src="https://kietsteven.github.io/Viamlab_research_web/filling_system.png" alt="" width="480px" height="480px">
+            </div>
+            <h4>Tính năng:</h4>
+              <ul>
+                <li>Điều khiển trực tiếp bằng màn hình HMI</li>
+                <li>Giám sát điều khiển từ xa thông qua SCADA và WebServer</li>
+                <li>Nhiệt độ bồn chứa có thể được điều khiển bằng bộ điều khiển PID</li>
+                <li>Cảm biến IFM với giao tiếp I/O-Link</li>
+                <li>Băng chuyền được điều khiển chính xác bằng RS-Servo</li>
+                <li>Hệ thống phân loại sản phẩm sử dụng camera</li>
+              </ul>
+            <p>Xem video tại:</p>
+            <iframe width="768" height="432" src="https://youtube.com/embed/U8B5QlTnp_k" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div>
+
+      <div id="con11" style="display: none;">
+          <h2>HỆ THỐNG PHÂN LOẠI VÀ LƯU TRỮ</h2>
+              <p>Việc phân loại sản phẩm theo tính chất là rất phổ biến trong công nghiệp, ví dụ phân loại sản phẩm lỗi, theo màu sắc, chiều cao,... để các sản phẩm có đặc tính tương tự được sắp xếp. Trong mô hình này, các đặc tính về vật liệu và chiều cao được sử dụng để phân loại sản phẩm.</p>
+              <p>Quy trình hoạt động: Sản phẩm được đặt lên băng chuyền → cảm biến chiều cao đo kích thước → cảm biến kim loại nhận biết vật liệu có phải kim loại hay không → nếu là kim loại và đúng chiều cao đã đặt, xi lanh sẽ đẩy và sản phẩm được chuyển lên khay lưu trữ ở tầng hai của kho (kho có 2 tầng: tầng 1: không kim loại, tầng 2: kim loại) → nếu là kim loại nhưng không đúng chiều cao, sản phẩm sẽ bị đưa ra khỏi băng chuyền → cảm biến không kim loại xử lý → nếu sản phẩm không phải kim loại và đúng chiều cao, xi lanh sẽ đẩy sản phẩm vào khay rồi cơ cấu gắp lấy sản phẩm đi.</p>
+              <div style="text-align: center;">
+                <img src="https://kietsteven.github.io/Viamlab_research_web/classification.png" alt="" width="480px" height="480px">
+              </div>
+              <h4>Tính năng:</h4>
+              <ul>
+                <li>Điều khiển qua màn hình HMI</li>
+                <li>Cảm biến IFM với giao tiếp IO-Link</li>
+                <li>Gripper (cơ cấu gắp) ổn định</li>
+                <li>Điều khiển băng chuyền bằng biến tần</li>
+              </ul>
+              <p>Xem video tại:</p>
+              <iframe width="768" height="432" src="https://www.youtube.com/embed/1EtWtBvE8u0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div>
+
+      <div id="con12" style="display: none;">
+          <h2>THỰC TẾ TĂNG CƯỜNG (AR)</h2>
+              <p>Thực tế tăng cường (AR) là việc tích hợp thông tin từ máy tính vào môi trường thực, trong đó việc chèn hình ảnh vào tầm nhìn của người dùng đóng vai trò chính. Công nghệ AR cải thiện khả năng làm việc của người lao động, tăng năng suất, tạo môi trường an toàn và nâng cao sự hài lòng khi làm việc.</p>
+              <h4>Ứng dụng của AR:</h4>
+              <ul>
+                <li>Lắp đặt</li>
+                <li>Bảo trì và sửa chữa</li>
+                <li>Đào tạo kỹ thuật viên</li>
+                <li>Kiểm soát chất lượng</li>
+              </ul>
+              <p>Demo thực tế tăng cường với biến tần</p>
+              <iframe width="768" height="432" src="https://www.youtube.com/embed/7tUaPp6CQZM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div>
+
+      <div id="con13" style="display: none;">
+              <div style="text-align: center;">
+                <img src="https://kietsteven.github.io/Viamlab_research_web/iiot_platform.png" alt="" width="800px" height="800px">
+                  <h4>NỀN TẢNG IOT</h4>
+              </div>
+      </div>
+
+      <div id="con14" style="display: none;">
+              <div style="text-align: center;">
+                <img src="https://kietsteven.github.io/Viamlab_research_web/manufacturing.png" alt="" width="800px" height="800px">
+                  <h4>HỆ THỐNG THỰC THI SẢN XUẤT</h4>
+              </div>
+      </div>
+
+      <div id="con15" style="display: none;">
+              <div style="text-align: center;">
+                <img src="https://kietsteven.github.io/Viamlab_research_web/warehouse.png" alt="" width="800px" height="800px">
+                  <h4>HỆ THỐNG QUẢN LÝ KHO</h4>
+              </div>
+      </div>
+
+      <div id="con16" style="display: none;">
+              <div style="text-align: center;">
+                <img src="https://kietsteven.github.io/Viamlab_research_web/computerized.png" alt="" width="800px" height="800px">
+                  <h4>HỆ THỐNG QUẢN LÝ BẢO TRÌ TỰ ĐỘNG</h4>
+              </div>
+      </div>
+
+      <div id="con17" style="display: none;">
+              <div style="text-align: center;">
+                <img src="https://kietsteven.github.io/Viamlab_research_web/machine.png" alt="" width="800px" height="800px">
+                  <h4>HỆ THỐNG GIÁM SÁT MÁY MÓC</h4>
+              </div>
+      </div>
+
+      <div id="con18" style="display: none;">
+          <h2>NHÀ THÔNG MINH</h2>
+            <h4>Giới thiệu:</h4>
+            <div style="text-align: center;">
+                <img src="https://kietsteven.github.io/Viamlab_research_web/smart_home.png" alt="" width="480px" height="480px">
+                <p>Hình 1: Cấu trúc và thuật toán của ngôi nhà thông minh được thiết kế</p>
+            </div>
+            <p>Xem video tại:</p>
+            <iframe width="768" height="432" src="https://www.youtube.com/embed/videoseries?list=PLc7Bg7xoyBQYcwDNho3ImMmB7HgcD3cyd" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div>
+
+      <div id="con19" style="display: none;">
+          <h2>MÀN NƯỚC SỐ</h2>
+            <p>Màn nước số là hệ thống hiển thị hình ảnh bằng nước thông qua việc điều khiển đóng mở các van theo một kịch bản đã định. Trong những năm gần đây, các hệ thống này xuất hiện ngày càng nhiều, đem lại lợi ích kinh tế và được ứng dụng rộng rãi trong trang trí, quảng cáo sự kiện, trung tâm thương mại và phòng trưng bày sản phẩm. Khi kết hợp âm nhạc và hiệu ứng ánh sáng, màn nước số tạo ra cảm xúc mạnh mẽ hơn so với hệ thống chiếu sáng thông thường.</p>
+            <p>Nhu cầu về thiết bị rất lớn, nhưng chi phí đầu tư cho màn nước số khá cao do phải nhập khẩu và việc bảo trì, thay thế cũng gặp nhiều khó khăn. Vì vậy, xu hướng nội địa hóa màn nước số trên thị trường là một nhu cầu cấp thiết để tăng tính cạnh tranh so với sản phẩm nhập khẩu.</p>
+              <div style="text-align: center;">
+                  <img src="https://kietsteven.github.io/Viamlab_research_web/digital_water_curtain.png" alt="" width="180px" height="180px">
+                  <p>Hình 1: Màn nước số</p>
+              </div>
+              <div style="text-align: center;">
+                  <img src="https://kietsteven.github.io/Viamlab_research_web/control_system.png" alt="" width="600px" height="600px">
+                  <p>Hình 2: Hệ thống điều khiển</p>
+              </div>
+            <p><strong>Giao diện trên PC (GUI):</strong> Chương trình nhập ảnh cần hiển thị lên màn nước.</p>
+            <ul>
+              <li>Chuyển bất kỳ ảnh nào thành ảnh đen trắng.</li>
+              <li>Tỷ lệ kích thước ảnh để phù hợp với số van trên màn hình.</li>
+              <li>Thực hiện script và chuyển dữ liệu hình ảnh xuống để lưu vào thẻ SD.</li>
+            </ul>
+            <p><strong>Điện thoại thông minh:</strong> Nhập ảnh hoặc tự tạo hình ảnh riêng.</p>
+            <p><strong>Vi điều khiển:</strong> Các board chủ yếu được dùng để xử lý và điều khiển van sao cho một hình ảnh hoặc kịch bản có thể hiển thị trên màn nước.</p>
+            <p><strong>Driver:</strong> Dùng để chuyển tín hiệu MCU thành lệnh đóng/mở van nước.</p>
+            <p><strong>Màn (Curtain):</strong> Hệ cơ khí được lắp van điều khiển.</p>
+            <p><strong>Bộ điều khiển ánh sáng dựa trên tín hiệu âm thanh:</strong> tăng hiệu ứng thu hút cho màn nước số.</p>
+            <p>Xem video:</p>
+            <iframe width="768" height="432" src="https://www.youtube.com/embed/PpP1KmMeC3s?list=PLc7Bg7xoyBQZgKUFUDe1HEylr_WJBuVGo&index=3" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div>
+
+     </div> 
+  </div>
+    <script>
+      // Ẩn tất cả các con
+      function hideAll() {
+        for (let i = 1; i <= 19; i++) {
+          let el = document.getElementById("con" + i);
+            if (el) el.style.display = "none";
+        }   
+      }
+
+      // Gắn sự kiện click cho từng nút
+      for (let i = 1; i <= 19; i++) {
+        let btn = document.getElementById("m" + i);
+          if (btn) {
+            btn.addEventListener("click", function () {
+                hideAll(); // Ẩn hết trước
+                let con = document.getElementById("con" + i);
+                if (con) con.style.display = "block"; // Hiện đúng cái cần
+              });
+          }
+      }
+
+/*
+      // Lấy tất cả các button có class "menu-button"
+        const buttons = document.querySelectorAll(".menu-button");
+
+        // Gán sự kiện click
+        buttons.forEach(button => {
+          button.addEventListener("click", () => {
+            window.scrollTo({
+              top: 200,
+              behavior: "smooth"  // cuộn mượt
+            });
+          });
+        });
+*/
+
+        // Lấy tất cả các button có class "menu-button"
+        const buttons = document.querySelectorAll(".menu-button");
+
+        buttons.forEach(button => {
+          button.addEventListener("click", () => {
+            // Nếu là màn hình nhỏ hơn 768px (điện thoại)
+            const isMobile = window.innerWidth <= 768;
+
+            window.scrollTo({
+              top: isMobile ? 1500 : 200, // Mobile: 500px, Desktop: 20px
+              behavior: "smooth"
+            });
+          });
+        });
+    </script>
+
+</body>
+</html>
