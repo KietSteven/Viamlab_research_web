@@ -1,696 +1,180 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VIAM Lab Research</title>
-  <style>
-    body {
-      font-family: Arial;
-      margin: 0;
-      padding: 0;
-    }
-    .center-img {
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-    }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sidebar MES Portal</title>
 
-    .container {
-      width: 1920px;
-      width: 100%;
-      display: flex;
-    }
-    .sidebar {
-      width: 25%;
-      background: #f1f1f1;
-      padding: 1em;
-      margin-left: 5%; /* Thêm khoảng cách bên trái */
-    }
-    .sidebar h3 {
-      background: #004c80;
-      color: white;
-      padding: 0.5em;
-      font-weight: bold;
-    }
-    .sidebar button {
-      width: 100%;
-      padding: 0.5em;
-      margin: 0.2em 0;
-      cursor: pointer;
-    }
-    .content {
-      flex: 1;
-      padding: 20px 20px; /* TRÊN-DƯỚI 30px, TRÁI-PHẢI 50px */
-      max-width: 800px;   /* Giới hạn chiều ngang để không bị tràn */
-      text-align: left; /* Căn lề trái */
-      font-size: 14px;
-    }
-    img {
-      max-width: 100%;
-      height: auto;
-    }
-    .section-title {
-      font-weight: bold;
-    }
-    h4 {
-      font-size: 15px;
-      font-family: Arial;
-      font-weight: bold;
-    }
-    .remove_underline {
-      text-decoration: none;
-    }
-/*
- *    Tương thích mọi loại màn hình
- */
+  <!-- Font Awesome CDN (thay cho react-icons) -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+  <!-- CSS -->
+<style>
+  .sidebar {
+  width: 60px;
+  height: 100vh;
+  background: linear-gradient(180deg, #0A2540 0%, #1E3A5F 100%);
+  color: white;
+  transition: width 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
 
-    /* Smartphones (portrait and landscape) ----------- */
-    @media (max-width: 768px) {
-      .sidebar {
-        width: 100%;
-        margin-left: 0;
-      }
-      .content {
-        max-width: 100%;
-        padding: 10px;
-      }
-      .container {
-        flex-direction: column;
-      }
-    }
+.sidebar:hover {
+  width: 250px;
+}
 
+.sidebar-header {
+  padding: 1rem;
+  border-bottom: 1px solid #334155;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  background-color: black;
+}
 
-    @media only screen 
-    and (min-device-width : 320px) 
-    and (max-device-width : 480px) {
-      /* Styles */
-    }
+.logo {
+  margin-bottom: 0.5rem;
+}
 
+.logo-img {
+  width: 40px;
+  transition: width 0.3s ease;
+}
 
-    /* Smartphones (landscape) ----------- */
-    @media only screen 
-    and (min-width : 321px) {
-      /* Styles */
-    }
+.sidebar:hover .logo-img {
+  width: 200px;
+}
 
-    /* Smartphones (portrait) ----------- */
-    @media only screen 
-    and (max-width : 320px) {
-      /* Styles */
-    }
+.portal-title {
+  font-size: 1rem;
+  margin: 0;
+  text-align: center;
+  opacity: 0.9;
+  display: none;
+}
 
-    /* iPads (portrait and landscape) ----------- */
-    @media only screen 
-    and (min-device-width : 768px) 
-    and (max-device-width : 1024px) {
-      /* Styles */
-    }
+.sidebar:hover .portal-title {
+  display: block;
+}
 
-    /* iPads (landscape) ----------- */
-    @media only screen 
-    and (min-device-width : 768px) 
-    and (max-device-width : 1024px) 
-    and (orientation : landscape) {
-      /* Styles */
-    }
+.sidebar-nav {
+  flex: 1;
+  padding: 1rem 0;
+}
 
-    /* iPads (portrait) ----------- */
-    @media only screen 
-    and (min-device-width : 768px) 
-    and (max-device-width : 1024px) 
-    and (orientation : portrait) {
-      /* Styles */
-    }
+.sidebar-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 
-    /* Desktops and laptops ----------- */
-    @media only screen 
-    and (min-width : 1224px) {
-      /* Styles */
-    }
+.sidebar-nav li {
+  margin: 0.25rem 0;
+}
 
-    /* Large screens ----------- */
-    @media only screen 
-    and (min-width : 1824px) {
-      /* Styles */
-    }
+.sidebar-nav button {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: none;
+  border: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  text-decoration: none;
+}
 
-    /* iPhone 4 - 5s ----------- */
-    @media
-    only screen and (-webkit-min-device-pixel-ratio : 1.5),
-    only screen and (min-device-pixel-ratio : 1.5) {
-      /* Styles */
-    }
+.sidebar-nav button:hover,
+.sidebar-nav li.active button {
+  background: rgba(59, 130, 246, 0.2);
+}
 
+.icon {
+  font-size: 1.2rem;
+  margin-right: 0.75rem;
+  flex-shrink: 0;
+}
 
-  </style>
+.label {
+  font-size: 0.95rem;
+  white-space: nowrap;
+  display: none;
+}
 
-  <script>
-      var m1 = document.getElementById("m1");
-      var m2 = document.getElementById("m2");
-      var m3 = document.getElementById("m3");
-      var m4 = document.getElementById("m4");
-      var m5 = document.getElementById("m5");
-      var m6 = document.getElementById("m6");
-      var m7 = document.getElementById("m7");
-      var m8 = document.getElementById("m8");
-      var m9 = document.getElementById("m9");
-      var m10 = document.getElementById("m10");
-      var m11 = document.getElementById("m11");
-      var m12 = document.getElementById("m12");
-      var m13 = document.getElementById("m13");
-      var m14 = document.getElementById("m14");
-      var m15 = document.getElementById("m15");
-      var m16 = document.getElementById("m16");
-      var m17 = document.getElementById("m17");
-      var m18 = document.getElementById("m18");
-      var m19 = document.getElementById("m19");
+.sidebar:hover .label {
+  display: inline;
+}
 
-      var con1 = document.getElementById("con1");
-      var con2 = document.getElementById("con2");
-      var con3 = document.getElementById("con3");
-      var con4 = document.getElementById("con4");
-      var con5 = document.getElementById("con5");
-      var con6 = document.getElementById("con6");
-      var con7 = document.getElementById("con7");
-      var con8 = document.getElementById("con8");
-      var con9 = document.getElementById("con9");
-      var con10 = document.getElementById("con10");
-      var con11 = document.getElementById("con11");
-      var con12 = document.getElementById("con12");
-      var con13 = document.getElementById("con13");
-      var con14 = document.getElementById("con14");
-      var con15 = document.getElementById("con15");
-      var con16 = document.getElementById("con16");
-      var con17 = document.getElementById("con17");
-      var con18 = document.getElementById("con18");
-      var con19 = document.getElementById("con19");
+/* Responsive: Trên mobile, sidebar overlay */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 250px;
+    transform: translateX(-100%);
+  }
 
-      var temp = [];
-      var menus = [m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13, m14, m15, m16, m17, m18, m19];
-      var contents = [con1, con2, con3, con4, con5, con6, con7, con8, con9, con10, con11, con12, con13, con14, con15, con16, con17, con18, con19];
-      for (var i = 0; i < 19; i++) {
-          temp[i] = contents[i].innerHTML;
-      }
-      function clear() {
-          for (var i = 1; i < 19; i++) {
-              contents[i].innerHTML = "";
-          }
-      }
-      clear();
-      m1.onclick = function direct1() {
-          con1.innerHTML = temp[0]
-      }
-      m2.onclick = function direct2() {
-          con1.innerHTML = temp[1]
-      }
-      m3.onclick = function direct3() {
-          con1.innerHTML = temp[2]
-      }
-      m4.onclick = function direct4() {
-          con1.innerHTML = temp[3]
-      }
-      m5.onclick = function direct5() {
-          con1.innerHTML = temp[4]
-      }
-      m6.onclick = function direct6() {
-          con1.innerHTML = temp[5]
-      }
-      m7.onclick = function direct7() {
-          con1.innerHTML = temp[6]
-      }
-      m8.onclick = function direct8() {
-          con1.innerHTML = temp[7]
-      }
-      m9.onclick = function direct9() {
-          con1.innerHTML = temp[8]
-      }
-      m10.onclick = function direct10() {
-          con1.innerHTML = temp[9]
-      }
-      m11.onclick = function direct11() {
-          con1.innerHTML = temp[10]
-      }
-      m12.onclick = function direct12() {
-          con1.innerHTML = temp[11]
-      }
-      m13.onclick = function direct13() {
-          con1.innerHTML = temp[12]
-      }
-      m14.onclick = function direct14() {
-          con1.innerHTML = temp[13]
-      }
-      m15.onclick = function direct15() {
-          con1.innerHTML = temp[14]
-      }
-      m16.onclick = function direct16() {
-          con1.innerHTML = temp[15]
-      }
-      m17.onclick = function direct17() {
-          con1.innerHTML = temp[16]
-      }
-      m18.onclick = function direct18() {
-          con1.innerHTML = temp[17]
-      }
-      m19.onclick = function direct19() {
-          con1.innerHTML = temp[18]
-      }
-  </script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  .sidebar:hover {
+    transform: translateX(0);
+    width: 250px;
+  }
+
+  .sidebar:hover .portal-title,
+  .sidebar:hover .label,
+  .sidebar:hover .logo-img {
+    display: block;
+    width: 200px;
+  }
+}
+</style>
+
 </head>
 <body>
-  <div class="container">
-   <div class="sidebar">
-
-     <a class="remove_underline" href="https://www.youtube.com/@VIAMLAB/featured" target="_blank">
-      <i class="fab fa-youtube" style="font-size:20px; color:red;"></i>
-     </a>         
-     <a class="remove_underline" style="color: blue; font-size: 18px;" href="https://www.youtube.com/@VIAMLAB/featured">VIAM LAB PROJECTS</a><br>
-     <a class="remove_underline" href="index.html"> <img src="https://flagcdn.com/w20/us.png" alt="🇺🇸 USA Flag"> English</a><br>
-     <a class="remove_underline" href="i_tiengviet.html"> <img src="https://flagcdn.com/w20/vn.png" alt="🇻🇳 Vietnam Flag"> Tiếng Việt</a>
-
-       <h3>A. ROBOTICS</h3>
-
-    <button id="m1" class="menu-button">UNMANNED SURFACE VEHICLE (USV)</button>
-    <button id="m2" class="menu-button">REMOTELY OPERATED UNDERWATER VEHICLE (ROV)</button>
-    <button id="m3" class="menu-button">AUTONOMOUS UNDERWATER VEHICLE (AUV)</button>
-    <button id="m4" class="menu-button">NAVIGATION</button>
-    <button id="m5" class="menu-button">MANIPULATOR APPLICATION</button>
-
-        <h3>B. AUTOMATION AND SMART MANUFACTURING</h3>
-
-    <div class="section-title">Internet of Things</div> 
-    <button id="m13" class="menu-button">IOT PLATFORM</button>
-
-    <div class="section-title">Smart Factory</div>
-    <button id="m14" class="menu-button">MANUFACTURING EXECUTION SYSTEM</button>
-    <button id="m15" class="menu-button">WAREHOUSE MANAGEMENT SYSTEM</button>
-    <button id="m16" class="menu-button">MAINTENANCE EXECUTION SYSTEM</button>
-    <button id="m17" class="menu-button">MACHINE MONITORING SYSTEM</button>
-    
-    <div class="section-title">Automation Training Kits</div>
-    <button id="m6" class="menu-button">FLEXIBLE MANUFACTURING SYSTEM</button>
-    <button id="m7" class="menu-button">OBJECT CLASSIFICATION SYSTEM</button>
-    <button id="m8" class="menu-button">MIXING TANK SYSTEM</button>
-    <button id="m9" class="menu-button">HEATING TANK</button>
-    <button id="m10" class="menu-button">FILLING SYSTEM</button>
-    <button id="m11" class="menu-button">CLASSIFICATION AND STORING SYSTEM</button>
-    <button id="m12" class="menu-button">AUGMENTED REALITY</button>
-
-    <!-- den day la dung -->
-        <h3>C. SMART HOME</h3>
-    <button id="m18" class="menu-button">SMART HOUSE</button>
-    <button id="m19" class="menu-button">DIGITAL WATER CURTAIN</button>
-   </div>
-     <div class="content">
-
-      <div id="con1">
-          <h2>UNMANNED SURFACE VEHICLE</h2>
-            <h4>Introduction:</h4>
-              <p>
-               Unmanned Surface Vehicle - USV is known as a modern vehicle which assists people indiscovering water environment. It can either be remotely controlled or operate automatically to fulfill different tasks.
-              </p>
-              <!-- <img src="unmanned.png" class="center-img" alt="" width="480px" height="480px"> -->
-                <div style="text-align: center;">
-                  <img src="https://kietsteven.github.io/Viamlab_research_web/unmanned.png" alt="" width="480px" height="480px">
-                  <p>Figure 1: Unmanned Surface Vehicle (USV)</p>
-                </div>
-                <div style="text-align: center;">
-                  <img src="https://kietsteven.github.io/Viamlab_research_web/USV_KIAL.png" alt="" width="480px" height="480px">
-                  <p>Figure 2: KIAL-UDB, finished products</p>
-                </div>
-            <h4>Application:</h4>
-             <ul>
-              <li>Researching and monitoring the environment.</li>
-              <li>Water sampling</li>
-              <li>Map drawing</li>
-              <li>Patrol and scout</li>
-              <li>Transferring information or carrying device.</li>
-              <li>Can be weaponized and used for various purposes in the military.</li>
-              <li>In addition, USV can be combined with AUV, ROV and UAV to form an automatic system for multiple purposes both in the air and water.</li>
-             </ul>
-             <a style="color: blue; text-decoration: underline; font-size: 16px;" href="http://viamlab.com/usv/">Current research</a>
-             
-             <p><br>Watch video:</p>
-             <iframe width="768" height="432" src="https://youtube.com/embed/J7D-GmNX5Js" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="sidebar-header">
+      <div class="logo">
+        <img src="bk_logo.png" class="logo-img" alt="logo bách khoa" />
       </div>
+      <h2 class="portal-title">MES Portal</h2>
+    </div>
 
-<!-- Nội dung tạm ẩn tương ứng với m2 → m17 -->
-      <div id="con2" style="display: none;">
-          <h2>REMOTELY OPERATED UNDERWATER VEHICLE (ROV)</h2>
-            <h4>Introduction:</h4>
-              <p>ROV is an underwater vehicle remotely controlled by cables and thrusters, varied in shape and size. ROV is regarded as a modern tool that enables people to explore the underwater world, perform many tasks at depths that humans can not reach. It can work under water for long periods, in harsh environment. Often there is a video camera, carrying sensors and hand-held machines, serving a variety of tasks for military and civil purposes.</p>
-            <div style="text-align: center;">
-                  <img src="https://kietsteven.github.io/Viamlab_research_web/VIAM_ROV_500.png" alt="" width="480px" height="480px">
-                  <p>Figure 1: VIAM - ROV500</p>
-            </div>
-            <div style="text-align: center;">
-                  <img src="https://kietsteven.github.io/Viamlab_research_web/VIAM_ROV_900.png" alt="" width="480px" height="480px">
-                  <p>Figure 2: VIAM - ROV900</p>
-            </div>
-            <div style="text-align: center;">
-                  <img src="https://kietsteven.github.io/Viamlab_research_web/ROV_KIAL.png" alt="" width="480px" height="480px">
-                  <p>Figure 3: KIAL - CROV</p>
-            </div>
-            <h4>Application:</h4>
-             <ul>
-              <li>Set up / remove mines, torpedoes</li>
-              <li>Collaborate with human in the battle</li>
-              <li>Patrol, security and rescue</li>
-              <li>Oil and gas field exploration, mineral</li>
-              <li>Close and open the valves, pipeline repair installation, rig maintenance</li>
-              <li>Digging, installing, checking underwater cable condition</li>
-              <li>Collecting information, geography, marine biology</li>
-              <li>Underwater archeology, exploration of shipwreck</li>
-             </ul>
-             
-             <p>Watch video:</p>
-             <iframe width="768" height="432" src="https://youtube.com/embed/bWml8bwyNkc?list=PLc7Bg7xoyBQag8-jyTHx7aMIk9cXDtdnp&index=2" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>  
-             <a style="color: blue; text-decoration: underline; font-size: 16px;" href="http://viamlab.com/en/tieng-viet-rov/">Current research</a>           
-      </div>
-
-      <div id="con3" style="display: none;">
-          <h2>AUTONOMOUS UNDERWATER VEHICLE (AUV)</h2>
-            <h4>Introduction:</h4>
-              <p>The AUV can be considered as an improved version of the ROV, which is a highly autonomous unmanned vehicle for underwater applications.Mostly of the torpedo type with propulsion and steering, self-controlled.Can work under water for long periods of time, depending on the source of energy.AUV is equipped with sensor devices, serving a variety of tasks for military and civil purposes.</p>
-              <div style="text-align: center;">
-                  <img src="https://kietsteven.github.io/Viamlab_research_web/auv.png" alt="" width="480px" height="480px">
-                  <p>Figure 1: VIAM-AUV2000</p>
-              </div>
-              <div style="text-align: center;">
-                  <img src="https://kietsteven.github.io/Viamlab_research_web/auv_kial.png" alt="" width="480px" height="480px">
-                  <p>Figure 2: KIAL-AUV</p>
-              </div>
-            <h4>Application:</h4>
-             <ul>
-              <li>Mapping the seabed</li>
-              <li>Survey and monitoring by region</li>
-              <li>Surface geological exploration, gathering information about the mines and minerals</li>
-              <li>Detect, destroy the target underwater, demining</li>
-              <li>Information gathering, monitoring and reconnaissance</li>
-              <li>Submarine warfare, survey and identification</li>
-              <li>Transmission of information and locate underwater</li>
-              <li>Attack and defense support</li>
-              <li>Special tasks (torpedoes, lay mines...)</li>
-             </ul>
-             
-             <p>Watch video:</p>
-             <iframe width="768" height="432" src="https://youtube.com/embed/ET_KhEP_FJU?list=PLc7Bg7xoyBQZayHJKUF1R1Wq9hHS2IiCn" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
-             <a style="color: blue; text-decoration: underline; font-size: 16px;" href="http://viamlab.com/en/tieng-viet-auv/">Current research</a>
-             
-      </div>
-
-      <div id="con4" style="display: none;">
-          <h2>NAVIGATION</h2>
-            <h4>Introduction:</h4>
-              <p>AHRS (Attitude and Heading Reference System) is an estimate of the angles of roll, pitch, yaw of self-propelled robots with high accuracy and updating speed. Using AHRS and accelerometer sensors, Inertial Navigation System (INS) is able to locate the robot with high accuracy at the beginning but the INS drift is greater with time.Combining Global Positioning System (GPS) with INS system increases the quality in many aspects such as accuracy, speed update, ...</p>
-                <div style="text-align: center;">
-                  <img src="https://kietsteven.github.io/Viamlab_research_web/Navigations.png" alt="" width="480px" height="480px">
-                  <p>Navigation algorithms</p>
-                </div>
-                <div style="text-align: center;">
-                  <img src="https://kietsteven.github.io/Viamlab_research_web/Viam_Navi.png" alt="" width="480px" height="480px">
-                  <p>VIAM-NAVI, finished product</p>
-                </div>
-            <h4>Application:</h4>
-             <ul>
-              <li>Positioning on the ground, surface, under water.</li>
-              <li>Lead the way for self-propelled vehicles</li>
-              <li>Provides input data needed for advanced control applications such as positioning, balance,…</li>
-             </ul>
-             
-            <p>Watch video:</p>
-            <iframe width="768" height="432" src="https://youtube.com/embed/o9cujzsAN8Y?list=PLc7Bg7xoyBQZiq3ZgzNJDTnRh4e6OLKPv&t" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
-            <a style="color: blue; text-decoration: underline; font-size: 16px;" href="http://viamlab.com/en/tieng-viet-ahrs-gps-ins/">Current research</a>
-      </div>
-
-      <div id="con5" style="display: none;">
-          <h2>MANIPULATOR APPLICATION</h2>
-            <h4>Introduction:</h4>
-              <p>The need for robots is increasing in complex manufacturing processes that contribute to increased productivity, reduced costs, improved quality and accuracy, and reduced risk when people work at dangerous environment.The design of robotic systems operating without human intervention is becoming more and more popular, especially in the era of rapid development of computer vision today.</p>
-              <div style="text-align: center;">
-                  <img src="https://kietsteven.github.io/Viamlab_research_web/manipulator.png" alt="" width="480px" height="480px">
-              </div>
-            <h4>Application:</h4>
-             <ul>
-              <li>Folding & sort objects on the dynamic conveyor</li>
-              <li>Welding of complex objects</li>
-              <li>Spray paint for the product</li>
-              <li>Replace workers in hazardous environments and continuous operation</li>
-             </ul>
-             
-             <p>Watch video:</p>
-            <iframe width="768" height="432" src="https://youtube.com/embed/InRSUkYmM1k?list=PLc7Bg7xoyBQaGjb5rZjImvAuYE1nWD4Rq" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
-            <a style="color: blue; text-decoration: underline; font-size: 16px;" href="http://viamlab.com/en/tieng-viet-manipulator-application/">Current research</a>
-             
-      </div>
-
-      <div id="con6" style="display: none;">
-          <h2>Flexible Manufacturing System</h2>
-             <div style="text-align: center;">
-                  <img src="https://kietsteven.github.io/Viamlab_research_web/rotary_table.png" alt="" width="480px" height="480px">
-                  <p>Figure 1: Flexible Manufacturing System</p>
-             </div>
-             <div style="text-align: center;">
-                  <img src="https://kietsteven.github.io/Viamlab_research_web/flexible.png" alt="" width="480px" height="480px">
-                  <p>Figure 2:Flexible Manufacturing System</p>
-             </div>
-            <p>Watch video:</p>
-            <iframe width="768" height="432" src="https://youtube.com/embed/N7UgWDEVyPg?list=PLc7Bg7xoyBQZtjwLcNWIPMctzxekQ5hgk" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
-      </div>
-
-      <div id="con7" style="display: none;">
-          <h2>Object Classification System</h2>
-             <ul>
-              <li>Combining equipment in industrial automation such as cylinder, solenoid valve, conveyor, rotary handle, picking handle ... into the product classification model. Especially the picking mechanism is made of two axes X, Y is the visme attached to the stepper motor and the Z axis is the travel cylinder and the pick up cylinder.</li>
-              <li>Using module motion controller of PLC S7-1200 to control position for two X and Y axis motors and one rotary platform.</li>
-              <li>Use Matlab to capture and identify the chess pieces, then process and transmit PLC position parameters in x, y coordinates so that the station can position the chess piece to the desired position automatically.</li>
-              <li>Monitor, read status and manual mode to control effects on remote devices via Webserver written on HTML, CSS, Jquery and Javascript.</li>
-             </ul>
-            <div style="text-align: center;">
-              <img src="https://kietsteven.github.io/Viamlab_research_web/classification.png" alt="" width="480px" height="480px">
-                <p>Figure 1: Object Classification System</p>
-            </div>
-            <div style="text-align: center;">
-              <img src="https://kietsteven.github.io/Viamlab_research_web/PLC.png" alt="" width="480px" height="480px">
-                <p>Figure 2:Function control system</p>
-            </div>
-            <p></p>
-            <p>Watch video:</p>
-            <iframe width="768" height="432" src="https://youtube.com/embed/umtAHnbDquI?list=PLc7Bg7xoyBQbxYXAjaYNn7DhAbAm_XJO3" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
-      </div>
-
-      <div id="con8" style="display: none;">
-          <h2>MIXING TANK SYSTEM</h2>
-          <p>Our mixing tank system demonstrates a simple mixing process: fetching constitutive colourants (red, blue, yellow) -> computing the amount of each colourants -> mixing and blending to produce a new batch of colourant -> canning finished product.</p>
-           <div style="text-align: center;">
-              <img src="https://kietsteven.github.io/Viamlab_research_web/mixing_tank_system.png" alt="" width="480px" height="480px">
-           </div>
-          <h4>Feature:</h4>
-          <ul>
-            <li>Direct control using HMI</li>
-            <li>Remote supervisory control through the use of SCADA and WebServer</li>
-            <p>Watch video:</p>
-            <iframe width="768" height="432" src="https://www.youtube.com/embed/e_amv3fT85M" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
-          </ul>
-      </div>
-
-      <div id="con9" style="display: none;">
-          <h2>Heating Tank</h2>
-             <p>Temperature control and level control are widely concerned nowadays, especially in industry and agriculture. In the factories that specialize in producing chemical and beverage, the requirements concerning liquid’s temperature and volume (or level) are very strict. Therefore, researching a appropriate solution for this problem would be a tremendous help to quality management as well as production optimization.</p>
-             <p>Our model consists of a controlling tank and a storage tank. After being pumped into the controlling tank, the liquid is periodically heated using heater resistor. A pump is controlled by PLC and inverter to pump the required amount of liquid into the storage tank. The model also uses a PID controller to control the tank temperature. Additionally, the model is equipped with HMI interface, SCADA interface, LAN based web server, IOT-intergrated database to supervise the system</p>
-            <div style="text-align: center;">
-              <img src="https://kietsteven.github.io/Viamlab_research_web/heating_tank.png" alt="" width="480px" height="480px">
-            </div>
-            <p>Under development:</p>
-             <ul>
-              <li>Combine with other systems to form a large-scale production line</li>
-              <li>Integrate a chiller into the output pump,...</li>
-              <li>Widen the controller’s temperature range to adapt to different kinds of industrial systems</li>
-             </ul>
-            <p>Watch video:</p>
-            <iframe width="768" height="432" src="https://www.youtube.com/embed/DsuISeBP0y4?feature=oembed" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
-      </div>
-
-      <div id="con10" style="display: none;">
-          <h2>FILLING SYSTEM</h2>
-             <p>Our filling model is built based on the design of the filling systems used in beverage, chemical factories,...</p>
-             <p>Operation: A bottle is brought into the system and carried along the conveyor -> the sensors detect the bottle and stop the conveyor -> the system fills the bottle with water from the storage tank -> the amount of water is measured by a flow sensor -> when the bottle is full, the system stop pumping out water, the conveyor moves again and a new filling process begin</p>
-             <div style="text-align: center;">
-              <img src="https://kietsteven.github.io/Viamlab_research_web/filling_system.png" alt="" width="480px" height="480px">
-            </div>
-             <h4>Feature:</h4>
-              <ul>
-                <li>Direct control using HMI screen</li>
-                <li>Remote supervisory control through the use of SCADA and WebServer</li>
-                <li>Storage tank’s temperature can be controlled using PID controller</li>
-                <li>IFM sensors with I/O Link communication</li>
-                <li>Precisely controlled conveyor using RS-Servo</li>
-                <li>Product classification system using camera</li>
-              </ul>
-             <p>Watch video at:</p>
-             <iframe width="768" height="432" src="https://youtube.com/embed/U8B5QlTnp_k" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
-      </div>
-
-      <div id="con11" style="display: none;">
-          <h2>CLASSIFICATION AND STORING SYSTEM</h2>
-              <p>The classification of products according to the characteristics of the products is very popular in the industry such as classification of substandard products, according to color, height, ... so that products with similar characteristics can be arranged. In this model, the material and height characteristics are used to classify products.</p>
-              <p>Operating procedure: The product is put on the conveyor belt -> the height sensor will measure the height -> the metal sensor will recognize whether the material is metal -> If it is metal and set the height, the cylinder will push then the product will pick up the product tray into the hands on the second floor warehouse (store has 2 floors: 1st floor: nonmetals, 2nd floor: metal) -> If the product is metal but not the correct height, the product will go out of the conveyor ->  non-metallic sensor -> If the product is non-metal and the correct height, the cylinder pushes the product to the tray and then the picker takes the product away</p>
-              <div style="text-align: center;">
-                <img src="https://kietsteven.github.io/Viamlab_research_web/classification.png" alt="" width="480px" height="480px">
-              </div>
-              <h4>Feature:</h4>
-               <ul>
-                <li>Control via HMI screen</li>
-                <li>IFM sensors wth IO-Link communication</li>
-                <li>Stable Gripper</li>
-                <li>Conveyor control with inverter</li>
-               </ul>
-              <p>Watch video at:</p>
-              <iframe width="768" height="432" src="https://www.youtube.com/embed/1EtWtBvE8u0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
-      </div>
-
-      <div id="con12" style="display: none;">
-          <h2>Augmented reality (AR):</h2>
-              <p>Augmented reality (AR) is the integration of information from a computer into a real-world environment, in which the insertion of images into the user's vision is dominant. AR technology improves the worker's ability to increase productivity, it provides a safe environment and enhances job satisfaction of workers.</p>
-              <h4>Application of AR:</h4>
-               <ul>
-                <li>Installation</li>
-                <li>Maintenance and repair.</li>
-                <li>Technician training.</li>
-                <li>Quality control.</li>
-               </ul>
-              <p>Augmented reality demo with inverter</p>
-              <iframe width="768" height="432" src="https://www.youtube.com/embed/7tUaPp6CQZM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
-      </div>
-
-      <div id="con13" style="display: none;">
-              <div style="text-align: center;">
-                <img src="https://kietsteven.github.io/Viamlab_research_web/iiot_platform.png" alt="" width="800px" height="800px">
-                  <h4>IOT PLATFORM</h4>
-              </div>
-      </div>
-
-      <div id="con14" style="display: none;">
-              <div style="text-align: center;">
-                <img src="https://kietsteven.github.io/Viamlab_research_web/manufacturing.png" alt="" width="800px" height="800px">
-                  <h4>MANUFACTURING EXCECUTION SYSTEM</h4>
-              </div>
-      </div>
-
-      <div id="con15" style="display: none;">
-              <div style="text-align: center;">
-                <img src="https://kietsteven.github.io/Viamlab_research_web/warehouse.png" alt="" width="800px" height="800px">
-                  <h4>WAREHOUSE MANAGEMENT SYSTEM</h4>
-              </div>
-      </div>
-
-      <div id="con16" style="display: none;">
-              <div style="text-align: center;">
-                <img src="https://kietsteven.github.io/Viamlab_research_web/computerized.png" alt="" width="800px" height="800px">
-                  <h4>COMPUTERIZED MAINTENANCE MANAGEMENT SYSTEM</h4>
-              </div>
-
-      </div>
-
-      <div id="con17" style="display: none;">
-              <div style="text-align: center;">
-                <img src="https://kietsteven.github.io/Viamlab_research_web/machine.png" alt="" width="800px" height="800px">
-                  <h4>MACHINE MONITORING SYSTEM</h4>
-              </div>
-      </div>
-
-      <div id="con18" style="display: none;">
-          <h2>SMART HOUSE</h2>
-            <h4>Introduction:</h4>
-            <div style="text-align: center;">
-                <img src="https://kietsteven.github.io/Viamlab_research_web/smart_home.png" alt="" width="480px" height="480px">
-                <p>Hình 1: Structure & Algorithm of the Designed Smart Home</p>
-            </div>
-            <p>Xem video tại:</p>
-            <iframe width="768" height="432" src="https://www.youtube.com/embed/videoseries?list=PLc7Bg7xoyBQYcwDNho3ImMmB7HgcD3cyd" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
-      </div>
-
-      <div id="con19" style="display: none;">
-          <h2>Digital Water Curtain</h2>
-            <p>Digital water curtainis an image display system with water by controlling the opening and closing valves in a given scenario. In recent years, these systems have appeared more and more, bringing about economic benefits and are widely applied in the field of decoration, advertising for events, commercial center and product showroom...With the new addition, the ability to combine music and light will evoke more emotions for users than the conventional lighting system.</p>
-            <p>The demand for equipment is huge, but the cost of investing in digital water curtain is quite high due to the need to import from abroad and the maintenance and replacement is also difficult.Therefore, the localization trend of digital water curtainin the market is an urgent need to increase competitiveness compared to imported products.</p>
-              <div style="text-align: center;">
-                  <img src="https://kietsteven.github.io/Viamlab_research_web/digital_water_curtain.png" alt="" width="180px" height="180px">
-                  <p>Figure 1: Digital water curtain</p>
-              </div>
-              <div style="text-align: center;">
-                  <img src="https://kietsteven.github.io/Viamlab_research_web/control_system.png" alt="" width="600px" height="600px">
-                  <p>Figure 2: Control system</p>
-              </div>
-            <p><strong>GUI on PC:</strong> The image import program needs to be displayed on the water screen</p>
-            <ul>
-              <li>Import any image into a black and white image.</li>
-              <li>Scale image size to fit the number of valves on the screen.</li>
-              <li>Perform the script and transfer the image data down to store in the SD-Card.</li>
-            </ul>
-            <p><strong>Smart phone:</strong> Import images or create your own picture.</p>
-            <p><strong>Microcontroller:</strong> Boards are mainly used to handle and control valve tasks so that an image or a preset script can be displayed on the water screen..</p>
-            <p><strong>Driver:</strong> Used to convert the MCU signal into a water valve shutoff.</p>
-            <p><strong>Curtain:</strong> The mechanical system is fitted with control valves.</p>
-            <p><strong>The light controller is based on the audio signal:</strong> increase the attractive effect of digital water curtain</p>
-            <p>Watch video:</p>
-            <iframe width="768" height="432" src="https://www.youtube.com/embed/PpP1KmMeC3s?list=PLc7Bg7xoyBQZgKUFUDe1HEylr_WJBuVGo&index=3" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
-      </div>
-
-     </div> 
+    <nav class="sidebar-nav">
+      <ul id="menuList">
+        <li data-id="1"><button><span class="icon"><i class="fa-solid fa-house"></i></span><span class="label">Tổng quan</span></button></li>
+        <li data-id="2"><button><span class="icon"><i class="fa-solid fa-file-lines"></i></span><span class="label">Yêu cầu sản xuất</span></button></li>
+        <li data-id="3"><button><span class="icon"><i class="fa-solid fa-clipboard-list"></i></span><span class="label">Kế hoạch sản xuất</span></button></li>
+        <li data-id="4"><button><span class="icon"><i class="fa-solid fa-calendar-days"></i></span><span class="label">Lịch sản xuất</span></button></li>
+        <li data-id="5"><button><span class="icon"><i class="fa-solid fa-chart-line"></i></span><span class="label">Tiến độ & sự cố</span></button></li>
+        <li data-id="6"><button><span class="icon"><i class="fa-solid fa-database"></i></span><span class="label">Danh mục</span></button></li>
+        <li data-id="7"><button><span class="icon"><i class="fa-solid fa-users"></i></span><span class="label">Quản lý người dùng</span></button></li>
+        <li data-id="8"><button><span class="icon"><i class="fa-solid fa-gear"></i></span><span class="label">Cài đặt</span></button></li>
+      </ul>
+    </nav>
   </div>
-    <script>
-      // Ẩn tất cả các con
-      function hideAll() {
-        for (let i = 1; i <= 19; i++) {
-          let el = document.getElementById("con" + i);
-            if (el) el.style.display = "none";
-        }   
-      }
 
-      // Gắn sự kiện click cho từng nút
-      for (let i = 1; i <= 19; i++) {
-        let btn = document.getElementById("m" + i);
-          if (btn) {
-            btn.addEventListener("click", function () {
-                hideAll(); // Ẩn hết trước
-                let con = document.getElementById("con" + i);
-                if (con) con.style.display = "block"; // Hiện đúng cái cần
-              });
-          }
-      }
+  <!-- JS -->
+  <script>
+    // Bắt tất cả menu items
+    const menuItems = document.querySelectorAll('#menuList li');
 
-/*
-      // Lấy tất cả các button có class "menu-button"
-        const buttons = document.querySelectorAll(".menu-button");
-
-        // Gán sự kiện click
-        buttons.forEach(button => {
-          button.addEventListener("click", () => {
-            window.scrollTo({
-              top: 200,
-              behavior: "smooth"  // cuộn mượt
-            });
-          });
-        });
-*/
-
-        // Lấy tất cả các button có class "menu-button"
-        const buttons = document.querySelectorAll(".menu-button");
-
-        buttons.forEach(button => {
-          button.addEventListener("click", () => {
-            // Nếu là màn hình nhỏ hơn 768px (điện thoại)
-            const isMobile = window.innerWidth <= 768;
-
-            window.scrollTo({
-              top: isMobile ? 1500 : 200, // Mobile: 500px, Desktop: 20px
-              behavior: "smooth"
-            });
-          });
-        });
-    </script>
-
+    menuItems.forEach(item => {
+      item.addEventListener('click', () => {
+        // Xóa class 'active' khỏi tất cả
+        menuItems.forEach(i => i.classList.remove('active'));
+        // Thêm class 'active' cho item được click
+        item.classList.add('active');
+        console.log("Đã chọn menu ID:", item.dataset.id);
+      });
+    });
+  </script>
 </body>
 </html>
