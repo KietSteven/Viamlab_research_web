@@ -1,3 +1,4 @@
+<!-- wp:html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -135,7 +136,118 @@
       }
     }
   </style>
-      
+
+  <script>
+      var m1 = document.getElementById("m1");
+      var m2 = document.getElementById("m2");
+      var m3 = document.getElementById("m3");
+      var m4 = document.getElementById("m4");
+      var m5 = document.getElementById("m5");
+      var m6 = document.getElementById("m6");
+      var m7 = document.getElementById("m7");
+      var m8 = document.getElementById("m8");
+      var m9 = document.getElementById("m9");
+      var m10 = document.getElementById("m10");
+      var m11 = document.getElementById("m11");
+      var m12 = document.getElementById("m12");
+      var m13 = document.getElementById("m13");
+      var m14 = document.getElementById("m14");
+      var m15 = document.getElementById("m15");
+      var m16 = document.getElementById("m16");
+      var m17 = document.getElementById("m17");
+      var m18 = document.getElementById("m18");
+      var m19 = document.getElementById("m19");
+
+      var con1 = document.getElementById("con1");
+      var con2 = document.getElementById("con2");
+      var con3 = document.getElementById("con3");
+      var con4 = document.getElementById("con4");
+      var con5 = document.getElementById("con5");
+      var con6 = document.getElementById("con6");
+      var con7 = document.getElementById("con7");
+      var con8 = document.getElementById("con8");
+      var con9 = document.getElementById("con9");
+      var con10 = document.getElementById("con10");
+      var con11 = document.getElementById("con11");
+      var con12 = document.getElementById("con12");
+      var con13 = document.getElementById("con13");
+      var con14 = document.getElementById("con14");
+      var con15 = document.getElementById("con15");
+      var con16 = document.getElementById("con16");
+      var con17 = document.getElementById("con17");
+      var con18 = document.getElementById("con18");
+      var con19 = document.getElementById("con19");
+
+      var temp = [];
+      var menus = [m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13, m14, m15, m16, m17, m18, m19];
+      var contents = [con1, con2, con3, con4, con5, con6, con7, con8, con9, con10, con11, con12, con13, con14, con15, con16, con17, con18, con19];
+      for (var i = 0; i < 19; i++) {
+          temp[i] = contents[i].innerHTML;
+      }
+      function clear() {
+          for (var i = 1; i < 19; i++) {
+              contents[i].innerHTML = "";
+          }
+      }
+      clear();
+      m1.onclick = function direct1() {
+          con1.innerHTML = temp[0]
+      }
+      m2.onclick = function direct2() {
+          con1.innerHTML = temp[1]
+      }
+      m3.onclick = function direct3() {
+          con1.innerHTML = temp[2]
+      }
+      m4.onclick = function direct4() {
+          con1.innerHTML = temp[3]
+      }
+      m5.onclick = function direct5() {
+          con1.innerHTML = temp[4]
+      }
+      m6.onclick = function direct6() {
+          con1.innerHTML = temp[5]
+      }
+      m7.onclick = function direct7() {
+          con1.innerHTML = temp[6]
+      }
+      m8.onclick = function direct8() {
+          con1.innerHTML = temp[7]
+      }
+      m9.onclick = function direct9() {
+          con1.innerHTML = temp[8]
+      }
+      m10.onclick = function direct10() {
+          con1.innerHTML = temp[9]
+      }
+      m11.onclick = function direct11() {
+          con1.innerHTML = temp[10]
+      }
+      m12.onclick = function direct12() {
+          con1.innerHTML = temp[11]
+      }
+      m13.onclick = function direct13() {
+          con1.innerHTML = temp[12]
+      }
+      m14.onclick = function direct14() {
+          con1.innerHTML = temp[13]
+      }
+      m15.onclick = function direct15() {
+          con1.innerHTML = temp[14]
+      }
+      m16.onclick = function direct16() {
+          con1.innerHTML = temp[15]
+      }
+      m17.onclick = function direct17() {
+          con1.innerHTML = temp[16]
+      }
+      m18.onclick = function direct18() {
+          con1.innerHTML = temp[17]
+      }
+      m19.onclick = function direct19() {
+          con1.innerHTML = temp[18]
+      }
+  </script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
@@ -148,9 +260,7 @@
      <a class="remove_underline" style="color: blue; font-size: 18px;" href="https://www.youtube.com/@VIAMLAB/featured">[:en]VIAM LAB PROJECTS[:vi]DỰ ÁN VIAM LAB[:]</a><br>
     </div>
 <h3>[:en]A. ROBOTICS[:vi]A. Rô bốt tự hành[:]</h3>
-    <button id="m1" class="menu-button">[:en]RECEPTION ROBOT[:vi]RÔ BỐT LỄ TÂN[:]</button>
-    <button id="m18" class="menu-button">[:en]DELIVERY ROBOT[:vi]RÔ BỐT GIAO HÀNG[:]</button>
-    <button id="m19" class="menu-button">[:en]UNMANNED SURFACE VEHICLE (USV)[:vi]PHƯƠNG TIỆN MẶT NƯỚC KHÔNG NGƯỜI LÁI (USV)[:]</button>
+    <button id="m1" class="menu-button">[:en]UNMANNED SURFACE VEHICLE (USV)[:vi]PHƯƠNG TIỆN MẶT NƯỚC KHÔNG NGƯỜI LÁI (USV)[:]</button>
     <button id="m2" class="menu-button">[:en]REMOTELY OPERATED UNDERWATER VEHICLE (ROV)[:vi]PHƯƠNG TIỆN DƯỚI NƯỚC ĐIỀU KHIỂN TỪ XA (ROV)[:]</button>
     <button id="m3" class="menu-button">[:en]AUTONOMOUS UNDERWATER VEHICLE (AUV)[:vi]PHƯƠNG TIỆN TỰ HÀNH DƯỚI NƯỚC (AUV)[:]</button>
     <button id="m4" class="menu-button">[:en]NAVIGATION[:vi]ĐIỀU HƯỚNG[:]</button>
@@ -159,14 +269,14 @@
 <h3>[:en]B. AUTOMATION AND SMART MANUFACTURING[:vi]B. TỰ ĐỘNG HÓA VÀ SẢN XUẤT THÔNG MINH[:]</h3>
   <div class="section-title">[:en]Internet of Things[:vi]Internet vạn vật (IOT)[:]</div> 
     <button id="m13" class="menu-button">[:en]IIOT PLATFORM[:vi]NỀN TẢNG IIOT[:]</button>
-  <div class="section-title">[:en]Smart Factory[:vi]Nhà máy thông minh[:]</div>
+  <div class="section-title">[:en]Digital Transformation[:vi]Chuyển đổi số[:]</div>
     <button id="m14" class="menu-button">[:en]SMART MANUFACTURING SOLUTIONS[:vi]GIẢI PHÁP SẢN XUẤT THÔNG MINH[:]</button>
     <!-- 
     <button id="m15" class="menu-button">[:en]WAREHOUSE MANAGEMENT SYSTEM[:vi]HỆ THỐNG QUẢN LÝ KHO[:]</button>
     <button id="m16" class="menu-button">[:en]MAINTENANCE EXECUTION SYSTEM[:vi]HỆ THỐNG QUẢN LÝ BẢO TRÌ[:]</button> 
     -->
     <button id="m12" class="menu-button">[:en]AUGMENTED REALITY[:vi]THỰC TẾ TĂNG CƯỜNG (AR)[:]</button>
-    <button id="m15" class="menu-button">[:en]MONITORING AND MANAGEMENT SYSTEM[:vi]HỆ THỐNG QUẢN LÝ VÀ QUAN TRẮC AO TÔM[:]</button>
+    <button id="m17" class="menu-button">[:en]MONITORING AND MANAGEMENT SYSTEM[:vi]HỆ THỐNG QUẢN LÝ VÀ QUAN TRẮC AO TÔM[:]</button>
   <div class="section-title">[:en]Automation Training Kits[:vi]Bộ kit đào tạo tự động hóa[:]</div>
     <button id="m6" class="menu-button">[:en]FLEXIBLE MANUFACTURING SYSTEM[:vi]HỆ THỐNG SẢN XUẤT LINH HOẠT[:]</button>
     <button id="m7" class="menu-button">[:en]OBJECT CLASSIFICATION SYSTEM[:vi]HỆ THỐNG PHÂN LOẠI VẬT THỂ[:]</button>
@@ -175,64 +285,12 @@
     <button id="m10" class="menu-button">[:en]FILLING SYSTEM[:vi]HỆ THỐNG CHIẾT RÓT[:]</button>
     <button id="m11" class="menu-button">[:en]CLASSIFICATION AND STORING SYSTEM[:vi]HỆ THỐNG PHÂN LOẠI VÀ LƯU TRỮ[:]</button>
 <h3>[:en]C. SMART HOME[:vi]C. NHÀ THÔNG MINH[:]</h3>
-    <button id="m16" class="menu-button">[:en]SMART HOUSE[:vi]NHÀ THÔNG MINH[:]</button>
-    <button id="m17" class="menu-button">[:en]DIGITAL WATER CURTAIN[:vi]MÀN NƯỚC SỐ[:]</button>
+    <button id="m18" class="menu-button">[:en]SMART HOUSE[:vi]NHÀ THÔNG MINH[:]</button>
+    <button id="m19" class="menu-button">[:en]DIGITAL WATER CURTAIN[:vi]MÀN NƯỚC SỐ[:]</button>
   </div>
      <div class="content">
+
         <div id="con1">
-                <h2>[:en]RECEPTION ROBOT[:vi]RÔ BỐT LỄ TÂN[:]</h2>
-                
-                <h4>[:en]Introduction:[:vi]Giới thiệu:[:]</h4>
-                <p>[:en]The Reception Robot is a mobile robot designed for indoor operation to support digital transformation in a school environment.
-                   [:vi]Rô bốt Lễ tân là rô bốt di động được thiết kế để hoạt động trong trường nhằm hỗ trợ chuyển đổi số tại môi trường trường học.
-                   [:]</p>         
-                    <img src="https://viam-web-navy.vercel.app/Reception_Robot.jpg">
-                    <p>[:en]Figure 1: Delivery Robot.[:vi]Hình 1: Rô bốt lễ tân.[:]</p>
-                    <img src="https://viam-web-navy.vercel.app/Reception_Monitor.jpg">
-                    <p>[:en]Figure 2: Monitoring interface.[:vi]Hình 2: Giao diện giám sát.[:]</p>    
-                <h4>[:en]Application:[:vi]Ứng dụng:[:]</h4>
-                <ul>
-                    <li>[:en]Information Guidance: Providing information and Q&A via Chatbot.[:vi]Hướng dẫn thông tin: Cung cấp thông tin và hỏi đáp qua Chatbot.[:]</li>
-                    <li>[:en]Attendance Support: Performing attendance checks.[:vi]Hỗ trợ điểm danh: Thực hiện việc điểm danh.[:]</li>
-                    <li>[:en]Navigation: Guiding and leading users to locations such as labs, classrooms, or restrooms.[:vi]Dẫn đường: Hướng dẫn và dẫn đường cho người dùng đến các địa điểm như phòng lab, phòng học, hoặc nhà vệ sinh.[:]</li>
-                    <li>[:en]Item Delivery: Carrying out item delivery via a form.[:vi]Giao vật phẩm: Thực hiện giao nhận vật phẩm theo biểu mẫu.[:]</li>
-                </ul>
-                <!--
-                <p><br>[:en]Watch video:[:vi]Xem video:[:]</p>
-                <iframe width="768" height="432" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
-                <a class="current-research-box" href="http://viamlab.com/usv/"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRe6kUGhVVJSCbtfCwZVqGT7wgybVjBLCsOmQ&s" alt="">
-                    [:en]Current research[:vi]Nghiên cứu hiện tại[:]
-                </a>
-                -->
-        </div>
-
-        <div id="con18" style="display: none;">
-                <h2>[:en]DELIVERY ROBOT[:vi]RÔ BỐT GIAO HÀNG[:]</h2>
-                
-                <h4>[:en]Introduction:[:vi]Giới thiệu:[:]</h4>
-                <p>[:en]The Delivery Robot is a robot that supports digital transformation in schools, with its main application being goods transportation. The robot was developed with the goal of autonomous operation in outdoor areas, allowing users to place orders and monitor the vehicle's operational status in real-time via an application.
-                   [:vi]Rô bốt Giao hàng là rô bốt hỗ trợ chuyển đổi số trong trường học , với ứng dụng chính là vận chuyển hàng hóa. Rô bốt được phát triển với mục tiêu có thể tự vận hành ở các khu vực ngoài trời , cho phép người dùng đặt hàng và theo dõi trạng thái hoạt động của xe trong thời gian thực thông qua ứng dụng.
-                   [:]</p>
-                    <img src="https://viam-web-navy.vercel.app/Delivery_Robot.jpg">
-                    <p>[:en]Figure 1: Delivery Robot.[:vi]Hình 1: Rô bốt giao hàng.[:]</p>
-                    <img src="https://viam-web-navy.vercel.app/Delivery_Monitor.jpg">
-                    <p>[:en]Figure 2: Monitoring interface.[:vi]Hình 2: Giao diện giám sát.[:]</p>         
-                <h4>[:en]Application:[:vi]Ứng dụng:[:]</h4>
-                <ul>
-                    <li>[:en]Goods transportation.[:vi]Vận chuyển hàng hóa.[:]</li>
-                    <li>[:en]Promoting digital transformation in management and services.[:vi]Thúc đẩy chuyển đổi số trong quản lý và dịch vụ.[:]</li>
-                    <li>[:en]Enhancing the user experience.[:vi]Nâng cao trải nghiệm người dùng.[:]</li>
-                </ul>
-                <!--
-                <p><br>[:en]Watch video:[:vi]Xem video:[:]</p>
-                <iframe width="768" height="432" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
-                <a class="current-research-box" href="http://viamlab.com/usv/"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRe6kUGhVVJSCbtfCwZVqGT7wgybVjBLCsOmQ&s" alt="">
-                    [:en]Current research[:vi]Nghiên cứu hiện tại[:]
-                </a>
-                -->
-        </div>
-
-        <div id="con19" style="display: none;">
                 <h2>[:en]UNMANNED SURFACE VEHICLE (USV)[:vi]PHƯƠNG TIỆN MẶT NƯỚC KHÔNG NGƯỜI LÁI (USV)[:]</h2>
                 
                 <h4>[:en]Introduction:[:vi]Giới thiệu:[:]</h4>
@@ -612,7 +670,7 @@
         </div>
     -->
 
-        <div id="con15" style="display: none;">
+        <div id="con17" style="display: none;">
             <h2>[:en]MONITORING AND MANAGEMENT SYSTEM[:vi]HỆ THỐNG QUẢN LÝ VÀ QUAN TRẮC AO TÔM[:]</h2>
             <img src="https://viam-web-navy.vercel.app/0_TrucQuanHoaHeThongAoTom.png" class="large-img" alt="">
             <p></p>
@@ -628,7 +686,7 @@
             <p></p>
         </div>
 
-        <div id="con16" style="display: none;">
+        <div id="con18" style="display: none;">
         <h2>[:en]SMART HOUSE[:vi]NHÀ THÔNG MINH[:]</h2>
         <h4>[:en]Introduction:[:vi]Giới thiệu:[:]</h4>
         
@@ -638,7 +696,7 @@
         <iframe width="768" height="432" src="https://www.youtube.com/embed/videoseries?list=PLc7Bg7xoyBQYcwDNho3ImMmB7HgcD3cyd" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
         </div>
 
-        <div id="con17" style="display: none;">
+        <div id="con19" style="display: none;">
         <h2>[:en]Digital Water Curtain[:vi]MÀN NƯỚC SỐ[:]</h2>
         
         <p>[:en]Digital water curtain is an image display system with water by controlling the opening and closing valves in a given scenario. In recent years, these systems have appeared more and more, bringing about economic benefits and are widely applied in the field of decoration, advertising for events, commercial center and product showroom...With the new addition, the ability to combine music and light will evoke more emotions for users than the conventional lighting system.[:vi]Màn nước số là hệ thống hiển thị hình ảnh bằng nước thông qua việc điều khiển đóng mở các van theo một kịch bản đã định. Trong những năm gần đây, các hệ thống này xuất hiện ngày càng nhiều, đem lại lợi ích kinh tế và được ứng dụng rộng rãi trong trang trí, quảng cáo sự kiện, trung tâm thương mại và phòng trưng bày sản phẩm. Khi kết hợp âm nhạc và hiệu ứng ánh sáng, màn nước số tạo ra cảm xúc mạnh mẽ hơn so với hệ thống chiếu sáng thông thường.[:]</p>
@@ -722,3 +780,4 @@
 
 </body>
 </html>
+<!-- /wp:html -->
